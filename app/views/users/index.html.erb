@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <%if @mensaje!=nil%>
 <script>
 swal({ title: "<%=@mensaje%>", type: "<%=@tipo%>", timer: 4000, 
@@ -26,32 +25,3 @@ showConfirmButton: true, closeOnConfirm: true });
       </div>
     </div>
   </div>
-=======
-<%if @mensaje!=nil%>
-<script>
-swal({ title: "<%=@mensaje%>", type: "<%=@tipo%>", timer: 4000, 
-showConfirmButton: true, closeOnConfirm: true });
-</script>
-<%end%>
-<div class="container">
-<div class="col-md-1">
-<img class="img" src="/img/logo_colegio.png"/>
-</div>
-    <div class="card card-login mx-auto mt-5">
-      <div class="card-header">Ingreso</div>
-      <div class="card-body">
-        <%= form_tag(:controller => "users", :action => "login", :method => "post") do |f| %>		
-          <div class="form-group">
-            <label for="txtUser">Dirección de correo</label>
-            <input class="form-control" id="txtUser" name="txtUser" type="email" aria-describedby="emailHelp" placeholder="Ingrese dirección de correo">
-          </div>
-          <div class="form-group">
-            <label for="txtPassword">Contraseña</label>
-            <input class="form-control" id="txtPassword" name="txtPassword" type="password" placeholder="Contraseña">
-          </div>
-          <input type="submit" class="btn btn-primary btn-block" value="Ingresar"/>
-        <% end %>
-      </div>
-    </div>
-  </div>
->>>>>>> 1e01f4e9f22fa18c286cca6ece8acf2e32a1bba9
