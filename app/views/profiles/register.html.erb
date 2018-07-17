@@ -1,0 +1,30 @@
+<%if @mensaje!=nil%>
+<script>
+swal({ title: "<%=@mensaje%>", type: "<%=@tipo%>", timer: 4000, 
+showConfirmButton: true, closeOnConfirm: true });
+</script>
+<%end%>
+<br>
+<br>
+<h1>Crear rol - ObservadorWeb 1.0</h1
+<div class="container">
+    <div class="card mx-auto mt-5">
+        <div class="card-header">Registrar rol</div>
+        <div class="card-body">
+        <%= form_tag(:id => "form_rgt_perfil", :controller => "profiles", :action => "save_register", :method => "post") do |f| %>
+            <div class="form-group">
+                <div class="form-row">
+                    <div class="col-md-6">
+                        <label id="lbDescripcion">Descripción: </label>
+                        <input class="form-control" id="txtDescripcion" name="txtDescripcion" type="text" placeholder="Ingrese descripción" required="required">
+                    </div>
+                    <div class="col-md-6">
+                        <label id="lbAceptar">Aceptar: </label>
+                        <input type="submit" class="btn btn-primary btn-block" value="Aceptar" />
+                    </div>
+                </div>
+            </div>            
+        <% end %>
+        </div>
+    </div>
+</div>
