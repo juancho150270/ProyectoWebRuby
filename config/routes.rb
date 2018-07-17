@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post "users/login"
   get "users/register"
   post "users/save_register"
+<<<<<<< HEAD
   get "profiles/register"
   post "profiles/save_register"
   get "students/register"
@@ -20,4 +21,6 @@ Rails.application.routes.draw do
   get "profiles/remove"
   get "students/remove"
 
+=======
+>>>>>>> 1e01f4e9f22fa18c286cca6ece8acf2e32a1bba9
 end

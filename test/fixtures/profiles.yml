@@ -1,5 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
+<<<<<<< HEAD
 # This model initially had no columns defined. If you add columns to the
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
@@ -9,3 +10,12 @@ one: {}
 #
 two: {}
 # column: value
+=======
+one:
+  id: 1
+  descripcion: MyString
+
+two:
+  id: 1
+  descripcion: MyString
+>>>>>>> 1e01f4e9f22fa18c286cca6ece8acf2e32a1bba9

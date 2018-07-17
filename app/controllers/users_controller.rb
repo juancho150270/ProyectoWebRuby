@@ -2,6 +2,7 @@ class UsersController < ApplicationController
     def index
         render 'index'
     end
+<<<<<<< HEAD
     def consult
         render 'consult',layout: 'home'
     end
@@ -11,6 +12,8 @@ class UsersController < ApplicationController
     def remove
         render 'remove',layout: 'home'
     end
+=======
+>>>>>>> 1e01f4e9f22fa18c286cca6ece8acf2e32a1bba9
     def login
         if User.exists?(:login=>params[:txtUser],:password=>params[:txtPassword])
             @mensaje="Usuario y clave correcto"
