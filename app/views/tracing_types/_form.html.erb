@@ -11,17 +11,41 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :descripcion %>
-    <%= form.text_field :descripcion, id: :tracing_type_descripcion %>
+  <div class="form-group">
+    <div class="form-row">
+      <div class="col-md-4">
+        <label id="lblId">Id:</label>
+        <input type="number" id="tracing_type_id" name="tracing_type[id]" 
+        class="form-control" placeholder="Ingrese id"
+        value="<%= @tracing_type != nil ? @tracing_type.id : '' %>">        
+      </div>
+
+      <div class="col-md-4">        
+        <label id="lblDescripcion">Descripción:</label>
+        <input type="text" id="tracing_type_descripcion" name="tracing_type[descripcion]" 
+        class="form-control" placeholder="Ingrese descripcion"
+        value="<%= @tracing_type != nil ? @tracing_type.descripcion : '' %>">
+      </div>
+
+      <div class="col-md-4">
+        <label id="lblfecha_creacion">Fecha Creacion:</label>
+        <input type="text" id="tracing_type_fecha_creacion" name="tracing_type[fecha_creacion]" 
+        class="form-control" placeholder="Ingrese fecha"
+        value="<%= @tracing_type != nil ? @tracing_type.fecha_creacion : '' %>">        
+      </div>
+
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :fecha_creacion %>
-    <%= form.datetime_select :fecha_creacion, id: :tracing_type_fecha_creacion %>
+  <div class="form-group">
+    <div class="form-row">
+      <div class="col-md-12">
+        
+        <input type="submit" id="btnAceptar" value="Aceptar"
+        class="btn btn-primary" name="btnAceptar"/>
+
+      </div>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+<% end %>  

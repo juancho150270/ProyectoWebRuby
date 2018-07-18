@@ -1,6 +1,17 @@
-<h1>Editing Working Day</h1>
+<div class="container">
+  <div class="card mx-auto mt-5">
+    <div class="card-header">Editar jornada</div>
+    <div class="card-body">
+        <%= render 'form', working_day: @working_day %>
 
-<%= render 'form', working_day: @working_day %>
-
-<%= link_to 'Show', @working_day %> |
-<%= link_to 'Back', working_days_path %>
+        <div class="form-group">
+            <div class="form-row">
+                <div class="col-md-6">
+                <%= link_to 'Ver', @working_day,{ class: "btn btn-info btn-sm" } %> 
+                <%= link_to 'Volver', working_days_path,{ class: "btn btn-info btn-sm" } %>
+                </div>
+            </div>
+        </div>
+   </div>
+  </div>
+</div>

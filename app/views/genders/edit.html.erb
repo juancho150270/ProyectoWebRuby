@@ -1,6 +1,17 @@
-<h1>Editing Gender</h1>
+<div class="container">
+  <div class="card mx-auto mt-5">
+    <div class="card-header">Editar genero</div>
+    <div class="card-body">
+        <%= render 'form', gender: @gender %>
 
-<%= render 'form', gender: @gender %>
-
-<%= link_to 'Show', @gender %> |
-<%= link_to 'Back', genders_path %>
+        <div class="form-group">
+            <div class="form-row">
+                <div class="col-md-6">
+                <%= link_to 'Ver', @gender,{ class: "btn btn-info btn-sm" } %> 
+                <%= link_to 'Volver', genders_path,{ class: "btn btn-info btn-sm" } %>
+                </div>
+            </div>
+        </div>
+   </div>
+  </div>
+</div>

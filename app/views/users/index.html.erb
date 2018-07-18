@@ -1,41 +1,59 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Users</h1>
+<div class="container">
+  <div class="card mx-auto mt-5">
+    <div class="card-header">Usuarios</div>
+    <div class="card-body">
 
-<table>
-  <thead>
-    <tr>
-      <th>Login</th>
-      <th>Perfil</th>
-      <th>Password</th>
-      <th>Primer nombre</th>
-      <th>Segundo nombre</th>
-      <th>Primer apellido</th>
-      <th>Segundo apellido</th>
-      <th>Telefono</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+ <div class="form-group">
+    <div class="form-row">
+      <div class="col-md-6">
+        <%= link_to 'Nuevo', new_user_path,{ class: "btn btn-warning btn-sm" } %>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-row">
+      <div class="col-md-6">
 
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.login %></td>
-        <td><%= user.perfil_id %></td>
-        <td><%= user.password %></td>
-        <td><%= user.primer_nombre %></td>
-        <td><%= user.segundo_nombre %></td>
-        <td><%= user.primer_apellido %></td>
-        <td><%= user.segundo_apellido %></td>
-        <td><%= user.telefono %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Login</th>
+              <th>Perfil</th>
+              <th>Password</th>
+              <th>Primer nombre</th>
+              <th>Segundo nombre</th>
+              <th>Primer apellido</th>
+              <th>Segundo apellido</th>
+              <th>Telefono</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @users.each do |user| %>
+              <tr>
+                <td><%= user.id %></td>
+                <td><%= user.login %></td>
+                <td><%= user.perfil_id %></td>
+                <td><%= user.password %></td>
+                <td><%= user.primer_nombre %></td>
+                <td><%= user.segundo_nombre %></td>
+                <td><%= user.primer_apellido %></td>
+                <td><%= user.segundo_apellido %></td>
+                <td><%= user.telefono %></td>
+                <td><%= link_to 'Ver', user,{ class: "btn btn-info btn-sm" } %></td>
+                <td><%= link_to 'Editar', edit_user_path(user),{ class: "btn btn-success btn-sm" } %></td>
+                <td><%= link_to 'Eliminar', user,:class=>"btn btn-danger btn-sm", method: :delete, data: { confirm: '¿Esta seguro de eliminar el registro?' } %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
 
-<br>
+      </div>
+    </div>
+  </div>
 
-<%= link_to 'New User', new_user_path %>
+    </div>
+  </div>
+</div>

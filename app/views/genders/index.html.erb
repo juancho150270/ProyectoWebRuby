@@ -1,29 +1,48 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Genders</h1>
+<div class="container">
+  <div class="card mx-auto mt-5">
+    <div class="card-header">Genero</div>
+    <div class="card-body">
 
-<table>
-  <thead>
-    <tr>
-      <th>Descripcion</th>
-      <th>Fecha creacion</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+ <div class="form-group">
+    <div class="form-row">
+      <div class="col-md-6">
+        <%= link_to 'Nuevo', new_gender_path,{ class: "btn btn-warning btn-sm" } %>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-row">
+      <div class="col-md-6">
 
-  <tbody>
-    <% @genders.each do |gender| %>
-      <tr>
-        <td><%= gender.descripcion %></td>
-        <td><%= gender.fecha_creacion %></td>
-        <td><%= link_to 'Show', gender %></td>
-        <td><%= link_to 'Edit', edit_gender_path(gender) %></td>
-        <td><%= link_to 'Destroy', gender, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Descripcion</th>
+              <th>Fecha Creacion</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @genders.each do |gender| %>
+              <tr>
+                <td><%= gender.id %></td>
+                <td><%= gender.descripcion %></td>
+                <td><%= gender.fecha_creacion %></td>
+                <td><%= link_to 'Ver', gender,{ class: "btn btn-info btn-sm" } %></td>
+                <td><%= link_to 'Editar', edit_gender_path(gender),{ class: "btn btn-success btn-sm" } %></td>
+                <td><%= link_to 'Eliminar', gender,:class=>"btn btn-danger btn-sm", method: :delete, data: { confirm: '¿Esta seguro de eliminar el registro?' } %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
 
-<br>
+      </div>
+    </div>
+  </div>
 
-<%= link_to 'New Gender', new_gender_path %>
+    </div>
+  </div>
+</div>

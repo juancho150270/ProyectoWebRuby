@@ -1,14 +1,34 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Descripcion:</strong>
-  <%= @working_day.descripcion %>
-</p>
+<div class="container">
+  <div class="card mx-auto mt-5">
+    <div class="card-header">Detalle</div>
+    <div class="card-body">
 
-<p>
-  <strong>Fecha creacion:</strong>
-  <%= @working_day.fecha_creacion %>
-</p>
-
-<%= link_to 'Edit', edit_working_day_path(@working_day) %> |
-<%= link_to 'Back', working_days_path %>
+       <div class="form-group">
+        <div class="form-row">
+          <div class="col-md-4">
+            <strong>Id:</strong>
+            <%= @working_day.id %>
+          </div>
+          <div class="col-md-4">
+            <strong>Descripcion:</strong>
+            <%= @working_day.descripcion %>
+          </div>
+          <div class="col-md-4">
+            <strong>Fecha Creacion:</strong>
+            <%= @working_day.fecha_creacion %>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="form-row">
+            <div class="col-md-6">
+                <%= link_to 'Editar', edit_working_day_path(@working_day),{ class: "btn btn-info btn-sm" } %> 
+                <%= link_to 'Volver', working_days_path,{ class: "btn btn-info btn-sm" } %>
+            </div>
+        </div> 
+      </div>
+    </div>
+  </div> 
+</div>
