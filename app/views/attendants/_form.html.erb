@@ -1,0 +1,72 @@
+<%= form_with(model: attendant, local: true) do |form| %>
+  <% if attendant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(attendant.errors.count, "error") %> prohibited this attendant from being saved:</h2>
+
+      <ul>
+      <% attendant.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :primer_nombre %>
+    <%= form.text_field :primer_nombre, id: :attendant_primer_nombre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :segundo_nombre %>
+    <%= form.text_field :segundo_nombre, id: :attendant_segundo_nombre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :primer_apellido %>
+    <%= form.text_field :primer_apellido, id: :attendant_primer_apellido %>
+  </div>
+
+  <div class="field">
+    <%= form.label :segundo_apellido %>
+    <%= form.text_field :segundo_apellido, id: :attendant_segundo_apellido %>
+  </div>
+
+  <div class="field">
+    <%= form.label :telefono_fijo %>
+    <%= form.text_field :telefono_fijo, id: :attendant_telefono_fijo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :telefono_celular %>
+    <%= form.text_field :telefono_celular, id: :attendant_telefono_celular %>
+  </div>
+
+  <div class="field">
+    <%= form.label :direccion %>
+    <%= form.text_field :direccion, id: :attendant_direccion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :correo %>
+    <%= form.text_field :correo, id: :attendant_correo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :parentesco %>
+    <%= form.number_field :parentesco, id: :attendant_parentesco %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha_creacion %>
+    <%= form.datetime_select :fecha_creacion, id: :attendant_fecha_creacion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :estudiante_id %>
+    <%= form.number_field :estudiante_id, id: :attendant_estudiante_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

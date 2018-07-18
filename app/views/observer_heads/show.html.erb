@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id:</strong>
+  <%= @observer_head.id %>
+</p>
+
+<p>
+  <strong>Fecha creacion:</strong>
+  <%= @observer_head.fecha_creacion %>
+</p>
+
+<p>
+  <strong>Estudiante:</strong>
+  <%= @observer_head.estudiante_id %>
+</p>
+
+<p>
+  <strong>Usuario:</strong>
+  <%= @observer_head.usuario_id %>
+</p>
+
+<p>
+  <strong>Titulo:</strong>
+  <%= @observer_head.titulo %>
+</p>
+
+<%= link_to 'Edit', edit_observer_head_path(@observer_head) %> |
+<%= link_to 'Back', observer_heads_path %>

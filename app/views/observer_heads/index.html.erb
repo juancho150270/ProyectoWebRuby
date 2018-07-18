@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Observer Heads</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Fecha creacion</th>
+      <th>Estudiante</th>
+      <th>Usuario</th>
+      <th>Titulo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @observer_heads.each do |observer_head| %>
+      <tr>
+        <td><%= observer_head.id %></td>
+        <td><%= observer_head.fecha_creacion %></td>
+        <td><%= observer_head.estudiante_id %></td>
+        <td><%= observer_head.usuario_id %></td>
+        <td><%= observer_head.titulo %></td>
+        <td><%= link_to 'Show', observer_head %></td>
+        <td><%= link_to 'Edit', edit_observer_head_path(observer_head) %></td>
+        <td><%= link_to 'Destroy', observer_head, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Observer Head', new_observer_head_path %>

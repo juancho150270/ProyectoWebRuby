@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id:</strong>
+  <%= @observer_detail.id %>
+</p>
+
+<p>
+  <strong>Fecha creacion:</strong>
+  <%= @observer_detail.fecha_creacion %>
+</p>
+
+<p>
+  <strong>Fecha modificacion:</strong>
+  <%= @observer_detail.fecha_modificacion %>
+</p>
+
+<p>
+  <strong>Seguimiento academico:</strong>
+  <%= @observer_detail.seguimiento_academico %>
+</p>
+
+<p>
+  <strong>Fecha sucesos:</strong>
+  <%= @observer_detail.fecha_sucesos %>
+</p>
+
+<p>
+  <strong>Observacion:</strong>
+  <%= @observer_detail.observacion %>
+</p>
+
+<p>
+  <strong>Compromisos:</strong>
+  <%= @observer_detail.compromisos %>
+</p>
+
+<p>
+  <strong>Obs encabezados:</strong>
+  <%= @observer_detail.obs_encabezados_id %>
+</p>
+
+<%= link_to 'Edit', edit_observer_detail_path(@observer_detail) %> |
+<%= link_to 'Back', observer_details_path %>

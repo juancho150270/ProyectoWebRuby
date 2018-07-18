@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tracing Types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Descripcion</th>
+      <th>Fecha creacion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tracing_types.each do |tracing_type| %>
+      <tr>
+        <td><%= tracing_type.descripcion %></td>
+        <td><%= tracing_type.fecha_creacion %></td>
+        <td><%= link_to 'Show', tracing_type %></td>
+        <td><%= link_to 'Edit', edit_tracing_type_path(tracing_type) %></td>
+        <td><%= link_to 'Destroy', tracing_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tracing Type', new_tracing_type_path %>

@@ -1,0 +1,42 @@
+<%= form_with(model: observer_head, local: true) do |form| %>
+  <% if observer_head.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(observer_head.errors.count, "error") %> prohibited this observer_head from being saved:</h2>
+
+      <ul>
+      <% observer_head.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :id %>
+    <%= form.number_field :id, id: :observer_head_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha_creacion %>
+    <%= form.datetime_select :fecha_creacion, id: :observer_head_fecha_creacion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :estudiante_id %>
+    <%= form.number_field :estudiante_id, id: :observer_head_estudiante_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :usuario_id %>
+    <%= form.number_field :usuario_id, id: :observer_head_usuario_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :titulo %>
+    <%= form.text_field :titulo, id: :observer_head_titulo %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

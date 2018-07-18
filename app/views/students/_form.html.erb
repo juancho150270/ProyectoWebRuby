@@ -1,0 +1,72 @@
+<%= form_with(model: student, local: true) do |form| %>
+  <% if student.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(student.errors.count, "error") %> prohibited this student from being saved:</h2>
+
+      <ul>
+      <% student.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :primer_nombre %>
+    <%= form.text_field :primer_nombre, id: :student_primer_nombre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :segundo_nombre %>
+    <%= form.text_field :segundo_nombre, id: :student_segundo_nombre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :primer_apellido %>
+    <%= form.text_field :primer_apellido, id: :student_primer_apellido %>
+  </div>
+
+  <div class="field">
+    <%= form.label :segundo_apellido %>
+    <%= form.text_field :segundo_apellido, id: :student_segundo_apellido %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha_nacimiento %>
+    <%= form.datetime_select :fecha_nacimiento, id: :student_fecha_nacimiento %>
+  </div>
+
+  <div class="field">
+    <%= form.label :direccion %>
+    <%= form.text_field :direccion, id: :student_direccion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :genero_id %>
+    <%= form.number_field :genero_id, id: :student_genero_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :grado_id %>
+    <%= form.number_field :grado_id, id: :student_grado_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha_creacion %>
+    <%= form.datetime_select :fecha_creacion, id: :student_fecha_creacion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :jornada_id %>
+    <%= form.number_field :jornada_id, id: :student_jornada_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :imagen %>
+    <%= form.text_field :imagen, id: :student_imagen %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

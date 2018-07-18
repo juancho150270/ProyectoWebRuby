@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  fecha_creacion: 2018-07-17 19:37:38
+  fecha_modificacion: 2018-07-17 19:37:38
+  seguimiento_academico: false
+  fecha_sucesos: 2018-07-17 19:37:38
+  observacion: MyText
+  compromisos: MyText
+  obs_encabezados_id: 1
+
+two:
+  id: 1
+  fecha_creacion: 2018-07-17 19:37:38
+  fecha_modificacion: 2018-07-17 19:37:38
+  seguimiento_academico: false
+  fecha_sucesos: 2018-07-17 19:37:38
+  observacion: MyText
+  compromisos: MyText
+  obs_encabezados_id: 1

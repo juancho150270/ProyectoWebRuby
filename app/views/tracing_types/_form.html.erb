@@ -1,0 +1,27 @@
+<%= form_with(model: tracing_type, local: true) do |form| %>
+  <% if tracing_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tracing_type.errors.count, "error") %> prohibited this tracing_type from being saved:</h2>
+
+      <ul>
+      <% tracing_type.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :descripcion %>
+    <%= form.text_field :descripcion, id: :tracing_type_descripcion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha_creacion %>
+    <%= form.datetime_select :fecha_creacion, id: :tracing_type_fecha_creacion %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,2 +1,0 @@
-class HeaderobserversController < ApplicationController
-end

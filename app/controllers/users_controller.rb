@@ -1,62 +1,74 @@
 class UsersController < ApplicationController
-    def index
-        render 'index'
-    end
-    def consult
-        render 'consult',layout: 'home'
-    end
-    def modify
-        render 'modify',layout: 'home'
-    end
-    def remove
-        render 'remove',layout: 'home'
-    end
-    def login
-        if User.exists?(:login=>params[:txtUser],:password=>params[:txtPassword])
-            @mensaje="Usuario y clave correcto"
-            @tipo="success"
-            render 'home',layout: 'home'
-        else
-            @mensaje="Usuario o clave incorrecto"
-            @tipo="warning"
-            render 'index'
-        end
-        
-    end
-    def register
-        @perfiles=Profile.all
-        render 'register',layout: 'home'
-    end
-    def save_register
-        @perfiles=Profile.all
-        if !params[:txtPassword].strip.eql?(params[:txtConfirmarPassword].strip)
-            @mensaje="Password no coincide"
-            @tipo="warning"
-            render 'register',layout: 'home'
-            return
-        end
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
-        user_search_id=0
-        id=0
-        user_search_id=User.order("id").last
-        id=user_search_id.id+1
+  # GET /users
+  # GET /users.json
+  def index
+    @users = User.all
+  end
 
-        user=User.new
-        user.id=id
-        user.login=params[:txtLogin]
-        user.password=params[:txtPassword]
-        user.perfil_id=params[:ddlPerfiles]
-        
-        if user.save
-            @mensaje="Usuario creado correctamente"
-            @tipo="success"
-            @perfiles=Profile.all
-            render 'register',layout: 'home'
-        else
-            @mensaje="Error al crear el usuario"
-            @tipo="warning"
-            @perfiles=Profile.all
-            render 'register',layout: 'home'
-        end
+  # GET /users/1
+  # GET /users/1.json
+  def show
+  end
+
+  # GET /users/new
+  def new
+    @user = User.new
+  end
+
+  # GET /users/1/edit
+  def edit
+  end
+
+  # POST /users
+  # POST /users.json
+  def create
+    @user = User.new(user_params)
+
+    respond_to do |format|
+      if @user.save
+        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.json { render :show, status: :created, location: @user }
+      else
+        format.html { render :new }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # PATCH/PUT /users/1
+  # PATCH/PUT /users/1.json
+  def update
+    respond_to do |format|
+      if @user.update(user_params)
+        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.json { render :show, status: :ok, location: @user }
+      else
+        format.html { render :edit }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /users/1
+  # DELETE /users/1.json
+  def destroy
+    @user.destroy
+    respond_to do |format|
+      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_user
+      @user = User.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def user_params
+      params.require(:user).permit(:login, :perfil_id, :password, :primer_nombre, :segundo_nombre, :primer_apellido, :segundo_apellido, :telefono)
     end
 end

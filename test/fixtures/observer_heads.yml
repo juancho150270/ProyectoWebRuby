@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  fecha_creacion: 2018-07-17 19:41:44
+  estudiante_id: 1
+  usuario_id: 1
+  titulo: MyString
+
+two:
+  id: 1
+  fecha_creacion: 2018-07-17 19:41:44
+  estudiante_id: 1
+  usuario_id: 1
+  titulo: MyString

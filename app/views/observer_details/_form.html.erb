@@ -1,0 +1,57 @@
+<%= form_with(model: observer_detail, local: true) do |form| %>
+  <% if observer_detail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(observer_detail.errors.count, "error") %> prohibited this observer_detail from being saved:</h2>
+
+      <ul>
+      <% observer_detail.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :id %>
+    <%= form.number_field :id, id: :observer_detail_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha_creacion %>
+    <%= form.datetime_select :fecha_creacion, id: :observer_detail_fecha_creacion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha_modificacion %>
+    <%= form.datetime_select :fecha_modificacion, id: :observer_detail_fecha_modificacion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :seguimiento_academico %>
+    <%= form.check_box :seguimiento_academico, id: :observer_detail_seguimiento_academico %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha_sucesos %>
+    <%= form.datetime_select :fecha_sucesos, id: :observer_detail_fecha_sucesos %>
+  </div>
+
+  <div class="field">
+    <%= form.label :observacion %>
+    <%= form.text_area :observacion, id: :observer_detail_observacion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :compromisos %>
+    <%= form.text_area :compromisos, id: :observer_detail_compromisos %>
+  </div>
+
+  <div class="field">
+    <%= form.label :obs_encabezados_id %>
+    <%= form.number_field :obs_encabezados_id, id: :observer_detail_obs_encabezados_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

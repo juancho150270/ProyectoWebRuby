@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @tracing_type.descripcion %>
+</p>
+
+<p>
+  <strong>Fecha creacion:</strong>
+  <%= @tracing_type.fecha_creacion %>
+</p>
+
+<%= link_to 'Edit', edit_tracing_type_path(@tracing_type) %> |
+<%= link_to 'Back', tracing_types_path %>

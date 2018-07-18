@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Primer nombre:</strong>
+  <%= @attendant.primer_nombre %>
+</p>
+
+<p>
+  <strong>Segundo nombre:</strong>
+  <%= @attendant.segundo_nombre %>
+</p>
+
+<p>
+  <strong>Primer apellido:</strong>
+  <%= @attendant.primer_apellido %>
+</p>
+
+<p>
+  <strong>Segundo apellido:</strong>
+  <%= @attendant.segundo_apellido %>
+</p>
+
+<p>
+  <strong>Telefono fijo:</strong>
+  <%= @attendant.telefono_fijo %>
+</p>
+
+<p>
+  <strong>Telefono celular:</strong>
+  <%= @attendant.telefono_celular %>
+</p>
+
+<p>
+  <strong>Direccion:</strong>
+  <%= @attendant.direccion %>
+</p>
+
+<p>
+  <strong>Correo:</strong>
+  <%= @attendant.correo %>
+</p>
+
+<p>
+  <strong>Parentesco:</strong>
+  <%= @attendant.parentesco %>
+</p>
+
+<p>
+  <strong>Fecha creacion:</strong>
+  <%= @attendant.fecha_creacion %>
+</p>
+
+<p>
+  <strong>Estudiante:</strong>
+  <%= @attendant.estudiante_id %>
+</p>
+
+<%= link_to 'Edit', edit_attendant_path(@attendant) %> |
+<%= link_to 'Back', attendants_path %>
