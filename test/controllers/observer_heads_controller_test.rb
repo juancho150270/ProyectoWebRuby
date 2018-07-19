@@ -17,7 +17,7 @@ class ObserverHeadsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create observer_head" do
     assert_difference('ObserverHead.count') do
-      post observer_heads_url, params: { observer_head: { estudiante_id: @observer_head.estudiante_id, fecha_creacion: @observer_head.fecha_creacion, id: @observer_head.id, titulo: @observer_head.titulo, usuario_id: @observer_head.usuario_id } }
+      post observer_heads_url, params: { observer_head: { estado: @observer_head.estado, estudiante_id: @observer_head.estudiante_id, fecha_creacion: @observer_head.fecha_creacion, id: @observer_head.id, titulo: @observer_head.titulo, usuario_id: @observer_head.usuario_id } }
     end
 
     assert_redirected_to observer_head_url(ObserverHead.last)
@@ -34,7 +34,7 @@ class ObserverHeadsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update observer_head" do
-    patch observer_head_url(@observer_head), params: { observer_head: { estudiante_id: @observer_head.estudiante_id, fecha_creacion: @observer_head.fecha_creacion, id: @observer_head.id, titulo: @observer_head.titulo, usuario_id: @observer_head.usuario_id } }
+    patch observer_head_url(@observer_head), params: { observer_head: { estado: @observer_head.estado, estudiante_id: @observer_head.estudiante_id, fecha_creacion: @observer_head.fecha_creacion, id: @observer_head.id, titulo: @observer_head.titulo, usuario_id: @observer_head.usuario_id } }
     assert_redirected_to observer_head_url(@observer_head)
   end
 

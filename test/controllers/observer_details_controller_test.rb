@@ -17,7 +17,7 @@ class ObserverDetailsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create observer_detail" do
     assert_difference('ObserverDetail.count') do
-      post observer_details_url, params: { observer_detail: { compromisos: @observer_detail.compromisos, fecha_creacion: @observer_detail.fecha_creacion, fecha_modificacion: @observer_detail.fecha_modificacion, fecha_sucesos: @observer_detail.fecha_sucesos, id: @observer_detail.id, obs_encabezados_id: @observer_detail.obs_encabezados_id, observacion: @observer_detail.observacion, seguimiento_academico: @observer_detail.seguimiento_academico } }
+      post observer_details_url, params: { observer_detail: { compromisos: @observer_detail.compromisos, fecha_creacion: @observer_detail.fecha_creacion, fecha_modificacion: @observer_detail.fecha_modificacion, fecha_sucesos: @observer_detail.fecha_sucesos, id: @observer_detail.id, obs_encabezado_id: @observer_detail.obs_encabezado_id, observacion: @observer_detail.observacion, tipo_seguimiento: @observer_detail.tipo_seguimiento } }
     end
 
     assert_redirected_to observer_detail_url(ObserverDetail.last)
@@ -34,7 +34,7 @@ class ObserverDetailsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update observer_detail" do
-    patch observer_detail_url(@observer_detail), params: { observer_detail: { compromisos: @observer_detail.compromisos, fecha_creacion: @observer_detail.fecha_creacion, fecha_modificacion: @observer_detail.fecha_modificacion, fecha_sucesos: @observer_detail.fecha_sucesos, id: @observer_detail.id, obs_encabezados_id: @observer_detail.obs_encabezados_id, observacion: @observer_detail.observacion, seguimiento_academico: @observer_detail.seguimiento_academico } }
+    patch observer_detail_url(@observer_detail), params: { observer_detail: { compromisos: @observer_detail.compromisos, fecha_creacion: @observer_detail.fecha_creacion, fecha_modificacion: @observer_detail.fecha_modificacion, fecha_sucesos: @observer_detail.fecha_sucesos, id: @observer_detail.id, obs_encabezado_id: @observer_detail.obs_encabezado_id, observacion: @observer_detail.observacion, tipo_seguimiento: @observer_detail.tipo_seguimiento } }
     assert_redirected_to observer_detail_url(@observer_detail)
   end
 

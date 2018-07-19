@@ -2,7 +2,7 @@
 
 <div class="container">
   <div class="card mx-auto mt-5">
-    <div class="card-header">Grados</div>
+    <div class="card-header">Grado</div>
     <div class="card-body">
 
  <div class="form-group">
@@ -21,7 +21,7 @@
             <tr>
               <th>Id</th>
               <th>Descripcion</th>
-              <th>Fecha Creacion</th>
+              <th>Fecha creación</th>
               <th colspan="3"></th>
             </tr>
           </thead>
@@ -33,7 +33,7 @@
                 <td><%= grade.fecha_creacion %></td>
                 <td><%= link_to 'Ver', grade,{ class: "btn btn-info btn-sm" } %></td>
                 <td><%= link_to 'Editar', edit_grade_path(grade),{ class: "btn btn-success btn-sm" } %></td>
-                <td><%= link_to 'Eliminar', grade,:class=>"btn btn-danger btn-sm", method: :delete, data: { confirm: '¿Esta seguro de eliminar el registro?' } %></td>
+                <td><%= link_to 'Eliminar', grade,:class=>"btn btn-danger btn-sm", method: :delete, data: { confirm: '¿Realmente desea eliminar el registro?' } %></td>
               </tr>
             <% end %>
           </tbody>

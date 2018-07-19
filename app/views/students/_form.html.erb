@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :id %>
+    <%= form.number_field :id, id: :student_id %>
+  </div>
+
+  <div class="field">
     <%= form.label :primer_nombre %>
     <%= form.text_field :primer_nombre, id: :student_primer_nombre %>
   </div>
@@ -33,7 +38,7 @@
 
   <div class="field">
     <%= form.label :fecha_nacimiento %>
-    <%= form.datetime_select :fecha_nacimiento, id: :student_fecha_nacimiento %>
+    <%= form.date_select :fecha_nacimiento, id: :student_fecha_nacimiento %>
   </div>
 
   <div class="field">
@@ -53,7 +58,12 @@
 
   <div class="field">
     <%= form.label :fecha_creacion %>
-    <%= form.datetime_select :fecha_creacion, id: :student_fecha_creacion %>
+    <%= form.date_select :fecha_creacion, id: :student_fecha_creacion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :imagen %>
+    <%= form.text_field :imagen, id: :student_imagen %>
   </div>
 
   <div class="field">
@@ -62,8 +72,18 @@
   </div>
 
   <div class="field">
-    <%= form.label :imagen %>
-    <%= form.text_field :imagen, id: :student_imagen %>
+    <%= form.label :acudiente_id %>
+    <%= form.number_field :acudiente_id, id: :student_acudiente_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :numero_identificacion %>
+    <%= form.number_field :numero_identificacion, id: :student_numero_identificacion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tipo_documentacion_id %>
+    <%= form.number_field :tipo_documentacion_id, id: :student_tipo_documentacion_id %>
   </div>
 
   <div class="actions">

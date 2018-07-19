@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label :fecha_creacion %>
-    <%= form.datetime_select :fecha_creacion, id: :observer_head_fecha_creacion %>
+    <%= form.date_select :fecha_creacion, id: :observer_head_fecha_creacion %>
   </div>
 
   <div class="field">
@@ -34,6 +34,11 @@
   <div class="field">
     <%= form.label :titulo %>
     <%= form.text_field :titulo, id: :observer_head_titulo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :estado %>
+    <%= form.number_field :estado, id: :observer_head_estado %>
   </div>
 
   <div class="actions">

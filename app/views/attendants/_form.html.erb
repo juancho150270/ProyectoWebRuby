@@ -11,62 +11,141 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :primer_nombre %>
-    <%= form.text_field :primer_nombre, id: :attendant_primer_nombre %>
+  <div class="form-group">
+    <div class="form-row">
+
+      <div class="col-md-3">
+        <label id="lblId">Id:</label>
+        <input type="number" id="attendant_id" name="attendant[id]" 
+        class="form-control" placeholder="Ingrese id"
+        value="<%= @attendant != nil ? @attendant.id : '' %>">        
+      </div>
+      
+      <div class="col-md-3">        
+        <label id="lblparentesco">Parentesco:</label>
+        <input type="text" id="attendant_parentesco" name="attendant[parentesco]" 
+        class="form-control" placeholder="Ingrese parentesco"
+        value="<%= @attendant != nil ? @attendant.parentesco : '' %>">
+      </div>
+
+      <div class="col-md-3">
+        <label id="lbltipo_documento_id">Tipo Documento:</label>
+        <input type="text" id="attendant_tipo_documento_id" name="attendant[tipo_documento_id]" 
+        class="form-control" placeholder="Ingrese tipo documento"
+        value="<%= @attendant != nil ? @attendant.tipo_documento_id : '' %>">
+      </div>
+
+      <div class="col-md-3">
+        <label id="lblcedula">Identificación:</label>
+        <input type="text" id="attendant_cedula" name="attendant[cedula]" 
+        class="form-control" placeholder="Ingrese identificación"
+        value="<%= @attendant != nil ? @attendant.cedula : '' %>">
+      </div>
+
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :segundo_nombre %>
-    <%= form.text_field :segundo_nombre, id: :attendant_segundo_nombre %>
+  <div class="form-group">
+    <div class="form-row">
+
+      <div class="col-md-3">
+        <label id="lblprimer_nombre">Primer Nombre:</label>
+        <input type="text" id="attendant_primer_nombre" name="attendant[primer_nombre]" 
+        class="form-control" placeholder="Primer Nombre"
+        value="<%= @attendant != nil ? @attendant.primer_nombre : '' %>">        
+      </div>
+      
+      <div class="col-md-3">        
+        <label id="lblsegundo_nombre">Segundo Nombre:</label>
+        <input type="text" id="attendant_segundo_nombre" name="attendant[segundo_nombre]" 
+        class="form-control" placeholder="Segundo Nombre"
+        value="<%= @attendant != nil ? @attendant.segundo_nombre : '' %>">
+      </div>
+
+      <div class="col-md-3">
+        <label id="lblprimer_apellido">Primer Apellido:</label>
+        <input type="text" id="attendant_primer_apellido" name="attendant[primer_apellido]" 
+        class="form-control" placeholder="Primer Apellido"
+        value="<%= @attendant != nil ? @attendant.primer_apellido : '' %>">
+      </div>
+
+      <div class="col-md-3">
+        <label id="lblsegundo_apellido">Segundo Apellido:</label>
+        <input type="text" id="attendant_segundo_apellido" name="attendant[segundo_apellido]" 
+        class="form-control" placeholder="Segundo Apellido"
+        value="<%= @attendant != nil ? @attendant.segundo_apellido : '' %>">
+      </div>
+
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :primer_apellido %>
-    <%= form.text_field :primer_apellido, id: :attendant_primer_apellido %>
+  <div class="form-group">
+    <div class="form-row">
+
+      <div class="col-md-3">
+        <label id="lbltelefono_celular">Telefono celular:</label>
+        <input type="text" id="attendant_telefono_celular" name="attendant[telefono_celular]" 
+        class="form-control" placeholder="Telefono celular"
+        value="<%= @attendant != nil ? @attendant.telefono_celular : '' %>">        
+      </div>
+
+      <div class="col-md-3">
+        <label id="lbltelefono_fijo">Telefono fijo:</label>
+        <input type="text" id="attendant_telefono_fijo" name="attendant[telefono_fijo]" 
+        class="form-control" placeholder="Telefono fijo"
+        value="<%= @attendant != nil ? @attendant.telefono_fijo : '' %>">        
+      </div>
+      
+      <div class="col-md-3">        
+        <label id="lblcorreo">Correo:</label>
+        <input type="email" id="attendant_correo" name="attendant[correo]" 
+        class="form-control" placeholder="Direccion de correo"
+        value="<%= @attendant != nil ? @attendant.correo : '' %>">
+      </div>
+
+      <div class="col-md-3">
+        <label id="lbldireccion">Dirección:</label>
+        <input type="text" id="attendant_direccion" name="attendant[direccion]" 
+        class="form-control" placeholder="Dirección"
+        value="<%= @attendant != nil ? @attendant.direccion : '' %>">
+      </div>
+
+      
+
+      
+
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :segundo_apellido %>
-    <%= form.text_field :segundo_apellido, id: :attendant_segundo_apellido %>
+  <div class="form-group">
+    <div class="form-row">
+
+    <div class="col-md-3">
+        <label id="lblgenero">Genero:</label>
+        <input type="text" id="attendant_genero" name="attendant[genero]" 
+        class="form-control" placeholder="Genero"
+        value="<%= @attendant != nil ? @attendant.genero : '' %>">        
+      </div>
+
+    <div class="col-md-3">
+        <label id="lblfecha_creacion">Fecha Creación:</label>
+        <input type="text" id="attendant_fecha_creacion" name="attendant[fecha_creacion]" 
+        class="form-control" placeholder="Fecha creación"
+        value="<%= @attendant != nil ? @attendant.fecha_creacion : '' %>">
+      </div>
+      
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :telefono_fijo %>
-    <%= form.text_field :telefono_fijo, id: :attendant_telefono_fijo %>
+  <div class="form-group">
+    <div class="form-row">
+      <div class="col-md-12">
+        
+        <input type="submit" id="btnAceptar" value="Aceptar"
+        class="btn btn-primary" name="btnAceptar"/>
+
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :telefono_celular %>
-    <%= form.text_field :telefono_celular, id: :attendant_telefono_celular %>
-  </div>
-
-  <div class="field">
-    <%= form.label :direccion %>
-    <%= form.text_field :direccion, id: :attendant_direccion %>
-  </div>
-
-  <div class="field">
-    <%= form.label :correo %>
-    <%= form.text_field :correo, id: :attendant_correo %>
-  </div>
-
-  <div class="field">
-    <%= form.label :parentesco %>
-    <%= form.number_field :parentesco, id: :attendant_parentesco %>
-  </div>
-
-  <div class="field">
-    <%= form.label :fecha_creacion %>
-    <%= form.datetime_select :fecha_creacion, id: :attendant_fecha_creacion %>
-  </div>
-
-  <div class="field">
-    <%= form.label :estudiante_id %>
-    <%= form.number_field :estudiante_id, id: :attendant_estudiante_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+<% end %>  

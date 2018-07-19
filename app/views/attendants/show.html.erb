@@ -1,59 +1,98 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Primer nombre:</strong>
-  <%= @attendant.primer_nombre %>
-</p>
+<div class="container">
+  <div class="card mx-auto mt-5">
+    <div class="card-header">Acudiente</div>
+    <div class="card-body">
 
-<p>
-  <strong>Segundo nombre:</strong>
-  <%= @attendant.segundo_nombre %>
-</p>
+       <div class="form-group">
+        <div class="form-row">
+          <div class="col-md-3">
+            <strong>Id:</strong>
+            <%= @attendant.id %>
+          </div>
+          <div class="col-md-3">
+            <strong>Parentesco:</strong>
+            <%= @attendant.parentesco %>
+          </div>
+          <div class="col-md-3">
+            <strong>Tipo documento:</strong>
+            <%= @attendant.tipo_documento_id %>
+          </div>
+          <div class="col-md-3">
+            <strong>Identificación:</strong>
+            <%= @attendant.cedula %>
+          </div>
+        </div>
+      </div>
 
-<p>
-  <strong>Primer apellido:</strong>
-  <%= @attendant.primer_apellido %>
-</p>
+      <div class="form-group">
+        <div class="form-row">
+          <div class="col-md-3">
+            <strong>Primer nombre:</strong>
+            <%= @attendant.primer_nombre %>
+          </div>
+          <div class="col-md-3">
+            <strong>Segundo nombre:</strong>
+            <%= @attendant.segundo_nombre %>
+          </div>
+          <div class="col-md-3">
+            <strong>Primer apellido:</strong>
+            <%= @attendant.primer_apellido %>
+          </div>
+          <div class="col-md-3">
+            <strong>Segundo Apellido:</strong>
+            <%= @attendant.segundo_apellido %>
+          </div>
+        </div>
+      </div>  
 
-<p>
-  <strong>Segundo apellido:</strong>
-  <%= @attendant.segundo_apellido %>
-</p>
+      <div class="form-group">
+        <div class="form-row">          
+          <div class="col-md-3">
+            <strong>Telefono celular:</strong>
+            <%= @attendant.telefono_celular %>
+          </div>
+          <div class="col-md-3">
+            <strong>Telefono fijo:</strong>
+            <%= @attendant.telefono_fijo %>
+          </div>
+          <div class="col-md-3">
+            <strong>Correo:</strong>
+            <%= @attendant.correo %>
+          </div>
+          <div class="col-md-3">
+            <strong>Dirección:</strong>
+            <%= @attendant.direccion %>
+          </div>
+        </div>
+      </div>
 
-<p>
-  <strong>Telefono fijo:</strong>
-  <%= @attendant.telefono_fijo %>
-</p>
+      
 
-<p>
-  <strong>Telefono celular:</strong>
-  <%= @attendant.telefono_celular %>
-</p>
+      <div class="form-group">
+        <div class="form-row">
+          <div class="col-md-3">
+            <strong>Genero:</strong>
+            <%= @attendant.genero %>
+          </div>
+          <div class="col-md-3">
+            <strong>Fecha creación:</strong>
+            <%= @attendant.fecha_creacion %>
+          </div>
+        </div>
+      </div>    
 
-<p>
-  <strong>Direccion:</strong>
-  <%= @attendant.direccion %>
-</p>
+      <div class="form-group">
+        <div class="form-row">
+            <div class="col-md-6">
+                <%= link_to 'Editar', edit_attendant_path(@attendant),{ class: "btn btn-info btn-sm" } %> 
+                <%= link_to 'Volver', attendants_path,{ class: "btn btn-info btn-sm" } %>
+            </div>
+        </div> 
+      </div>
+    </div>
+  </div> 
+</div>
 
-<p>
-  <strong>Correo:</strong>
-  <%= @attendant.correo %>
-</p>
 
-<p>
-  <strong>Parentesco:</strong>
-  <%= @attendant.parentesco %>
-</p>
-
-<p>
-  <strong>Fecha creacion:</strong>
-  <%= @attendant.fecha_creacion %>
-</p>
-
-<p>
-  <strong>Estudiante:</strong>
-  <%= @attendant.estudiante_id %>
-</p>
-
-<%= link_to 'Edit', edit_attendant_path(@attendant) %> |
-<%= link_to 'Back', attendants_path %>

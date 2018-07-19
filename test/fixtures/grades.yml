@@ -1,9 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   descripcion: MyString
-  fecha_creacion: 2018-07-17 19:57:13
+  fecha_creacion: 2018-07-19
 
 two:
+  id: 1
   descripcion: MyString
-  fecha_creacion: 2018-07-17 19:57:13
+  fecha_creacion: 2018-07-19

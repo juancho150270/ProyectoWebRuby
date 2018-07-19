@@ -2,14 +2,16 @@
 
 one:
   id: 1
-  fecha_creacion: 2018-07-17 19:41:44
+  fecha_creacion: 2018-07-19
   estudiante_id: 1
   usuario_id: 1
   titulo: MyString
+  estado: 1
 
 two:
   id: 1
-  fecha_creacion: 2018-07-17 19:41:44
+  fecha_creacion: 2018-07-19
   estudiante_id: 1
   usuario_id: 1
   titulo: MyString
+  estado: 1

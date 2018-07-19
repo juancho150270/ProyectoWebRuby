@@ -10,6 +10,7 @@
       <th>Estudiante</th>
       <th>Usuario</th>
       <th>Titulo</th>
+      <th>Estado</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,6 +23,7 @@
         <td><%= observer_head.estudiante_id %></td>
         <td><%= observer_head.usuario_id %></td>
         <td><%= observer_head.titulo %></td>
+        <td><%= observer_head.estado %></td>
         <td><%= link_to 'Show', observer_head %></td>
         <td><%= link_to 'Edit', edit_observer_head_path(observer_head) %></td>
         <td><%= link_to 'Destroy', observer_head, method: :delete, data: { confirm: 'Are you sure?' } %></td>

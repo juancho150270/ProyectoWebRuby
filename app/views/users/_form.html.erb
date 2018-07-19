@@ -11,47 +11,130 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :login %>
-    <%= form.text_field :login, id: :user_login %>
+  <div class="form-group">
+    <div class="form-row">
+
+      <div class="col-md-3">
+        <label id="lblId">Id:</label>
+        <input type="number" id="user_id" name="user[id]" 
+        class="form-control" placeholder="Ingrese id"
+        value="<%= @user != nil ? @user.id : '' %>">        
+      </div>
+      
+      <div class="col-md-3">        
+        <label id="lbllogin">Login:</label>
+        <input type="text" id="user_login" name="user[login]" 
+        class="form-control" placeholder="Ingrese login"
+        value="<%= @user != nil ? @user.login : '' %>">
+      </div>
+
+      <div class="col-md-3">
+        <label id="lblperfil_id">Perfil:</label>
+        <input type="text" id="user_perfil_id" name="user[perfil_id]" 
+        class="form-control" placeholder="Ingrese perfil_id"
+        value="<%= @user != nil ? @user.perfil_id : '' %>">
+      </div>
+
+      <div class="col-md-3">
+        <label id="lblpassword">Password:</label>
+        <input type="text" id="user_password" name="user[password]" 
+        class="form-control" placeholder="Ingrese password"
+        value="<%= @user != nil ? @user.password : '' %>">
+      </div>
+
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :perfil_id %>
-    <%= form.number_field :perfil_id, id: :user_perfil_id %>
+  <div class="form-group">
+    <div class="form-row">
+
+      <div class="col-md-3">
+        <label id="lblprimer_nombre">Primer Nombre:</label>
+        <input type="text" id="user_primer_nombre" name="user[primer_nombre]" 
+        class="form-control" placeholder="Primer Nombre"
+        value="<%= @user != nil ? @user.primer_nombre : '' %>">        
+      </div>
+      
+      <div class="col-md-3">        
+        <label id="lblsegundo_nombre">Segundo Nombre:</label>
+        <input type="text" id="user_segundo_nombre" name="user[segundo_nombre]" 
+        class="form-control" placeholder="Segundo Nombre"
+        value="<%= @user != nil ? @user.segundo_nombre : '' %>">
+      </div>
+
+      <div class="col-md-3">
+        <label id="lblprimer_apellido">Primer Apellido:</label>
+        <input type="text" id="user_primer_apellido" name="user[primer_apellido]" 
+        class="form-control" placeholder="Primer Apellido"
+        value="<%= @user != nil ? @user.primer_apellido : '' %>">
+      </div>
+
+      <div class="col-md-3">
+        <label id="lblsegundo_apellido">Segundo Apellido:</label>
+        <input type="text" id="user_segundo_apellido" name="user[segundo_apellido]" 
+        class="form-control" placeholder="Segundo Apellido"
+        value="<%= @user != nil ? @user.segundo_apellido : '' %>">
+      </div>
+
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.text_field :password, id: :user_password %>
+  <div class="form-group">
+    <div class="form-row">
+
+      <div class="col-md-3">
+        <label id="lbltelefono">Telefono:</label>
+        <input type="text" id="user_telefono" name="user[telefono]" 
+        class="form-control" placeholder="Telefono"
+        value="<%= @user != nil ? @user.telefono : '' %>">        
+      </div>
+      
+      <div class="col-md-3">        
+        <label id="lblcorreo">Correo:</label>
+        <input type="email" id="user_correo" name="user[correo]" 
+        class="form-control" placeholder="Direccion de correo"
+        value="<%= @user != nil ? @user.correo : '' %>">
+      </div>
+
+      <div class="col-md-3">
+        <label id="lblfecha_creacion">Fecha Creación:</label>
+        <input type="text" id="user_fecha_creacion" name="user[fecha_creacion]" 
+        class="form-control" placeholder="Fecha creación"
+        value="<%= @user != nil ? @user.fecha_creacion : '' %>">
+      </div>
+
+      <div class="col-md-3">
+        <label id="lbltipo_documento_id">Tipo documento:</label>
+        <input type="text" id="user_tipo_documento_id" name="user[tipo_documento_id]" 
+        class="form-control" placeholder="Tipo documento"
+        value="<%= @user != nil ? @user.tipo_documento_id : '' %>">
+      </div>
+
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :primer_nombre %>
-    <%= form.text_field :primer_nombre, id: :user_primer_nombre %>
+  <div class="form-group">
+    <div class="form-row">
+
+      <div class="col-md-3">
+        <label id="lblcedula">Numero de identificación:</label>
+        <input type="number" id="user_cedula" name="user[cedula]" 
+        class="form-control" placeholder="Numero de identificación"
+        value="<%= @user != nil ? @user.cedula : '' %>">        
+      </div>
+      
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :segundo_nombre %>
-    <%= form.text_field :segundo_nombre, id: :user_segundo_nombre %>
+  <div class="form-group">
+    <div class="form-row">
+      <div class="col-md-12">
+        
+        <input type="submit" id="btnAceptar" value="Aceptar"
+        class="btn btn-primary" name="btnAceptar"/>
+
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :primer_apellido %>
-    <%= form.text_field :primer_apellido, id: :user_primer_apellido %>
-  </div>
-
-  <div class="field">
-    <%= form.label :segundo_apellido %>
-    <%= form.text_field :segundo_apellido, id: :user_segundo_apellido %>
-  </div>
-
-  <div class="field">
-    <%= form.label :telefono %>
-    <%= form.text_field :telefono, id: :user_telefono %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+<% end %>  

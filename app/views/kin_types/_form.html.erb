@@ -1,0 +1,57 @@
+<%= form_with(model: kin_type, local: true) do |form| %>
+  <% if kin_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(kin_type.errors.count, "error") %> prohibited this kin_type from being saved:</h2>
+
+      <ul>
+      <% kin_type.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <div class="form-row">
+      <div class="col-md-3">
+
+        <label id="lblId">Id:</label>
+        <input type="number" id="kin_type_id" name="kin_type[id]" 
+        class="form-control" placeholder="Ingrese id"
+        value="<%= @kin_type != nil ? @kin_type.id : '' %>">
+        
+      </div>
+      
+      <div class="col-md-3">
+        
+        <label id="lbldescripcion">Descripción:</label>
+        <input type="text" id="kin_type_descripcion" name="kin_type[descripcion]" 
+        class="form-control" placeholder="Ingrese descripción"
+        value="<%= @kin_type != nil ? @kin_type.descripcion : '' %>">
+
+      </div>
+
+      <div class="col-md-3">
+        
+        <label id="lblfecha_creacion">Fecha creación:</label>
+        <input type="text" id="kin_type_fecha_creacion" name="kin_type[fecha_creacion]" 
+        class="form-control" placeholder="Ingrese fecha"
+        value="<%= @kin_type != nil ? @kin_type.fecha_creacion : '' %>">
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="form-row">
+      <div class="col-md-12">
+        
+        <input type="submit" id="btnAceptar" value="Aceptar"
+        class="btn btn-primary" name="btnAceptar"/>
+
+      </div>
+    </div>
+  </div>
+
+<% end %>  

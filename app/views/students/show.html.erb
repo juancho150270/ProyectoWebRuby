@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Id:</strong>
+  <%= @student.id %>
+</p>
+
+<p>
   <strong>Primer nombre:</strong>
   <%= @student.primer_nombre %>
 </p>
@@ -46,13 +51,28 @@
 </p>
 
 <p>
+  <strong>Imagen:</strong>
+  <%= @student.imagen %>
+</p>
+
+<p>
   <strong>Jornada:</strong>
   <%= @student.jornada_id %>
 </p>
 
 <p>
-  <strong>Imagen:</strong>
-  <%= @student.imagen %>
+  <strong>Acudiente:</strong>
+  <%= @student.acudiente_id %>
+</p>
+
+<p>
+  <strong>Numero identificacion:</strong>
+  <%= @student.numero_identificacion %>
+</p>
+
+<p>
+  <strong>Tipo documentacion:</strong>
+  <%= @student.tipo_documentacion_id %>
 </p>
 
 <%= link_to 'Edit', edit_student_path(@student) %> |

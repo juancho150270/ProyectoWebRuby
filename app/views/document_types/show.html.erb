@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <div class="card mx-auto mt-5">
+    <div class="card-header">Tipo de documento</div>
+    <div class="card-body">
+
+       <div class="form-group">
+        <div class="form-row">
+          <div class="col-md-4">
+            <strong>Id:</strong>
+            <%= @document_type.id %>
+          </div>
+          <div class="col-md-4">
+            <strong>Descripción:</strong>
+            <%= @document_type.descripcion %>
+          </div>
+          <div class="col-md-4">
+            <strong>Fecha creación:</strong>
+            <%= @document_type.fecha_creacion %>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="form-row">
+            <div class="col-md-6">
+                <%= link_to 'Editar', edit_document_type_path(@document_type),{ class: "btn btn-info btn-sm" } %> 
+                <%= link_to 'Volver', document_types_path,{ class: "btn btn-info btn-sm" } %>
+            </div>
+        </div> 
+      </div>
+    </div>
+  </div> 
+</div>
+
+

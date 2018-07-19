@@ -1,0 +1,57 @@
+<%= form_with(model: observer_state, local: true) do |form| %>
+  <% if observer_state.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(observer_state.errors.count, "error") %> prohibited this observer_state from being saved:</h2>
+
+      <ul>
+      <% observer_state.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <div class="form-row">
+      <div class="col-md-3">
+
+        <label id="lblId">Id:</label>
+        <input type="number" id="observer_state_id" name="observer_state[id]" 
+        class="form-control" placeholder="Ingrese id"
+        value="<%= @observer_state != nil ? @observer_state.id : '' %>">
+        
+      </div>
+      
+      <div class="col-md-3">
+        
+        <label id="lbldescripcion">Descripción:</label>
+        <input type="text" id="observer_state_descripcion" name="observer_state[descripcion]" 
+        class="form-control" placeholder="Ingrese descripción"
+        value="<%= @observer_state != nil ? @observer_state.descripcion : '' %>">
+
+      </div>
+
+      <div class="col-md-3">
+        
+        <label id="lblfecha_creacion">Fecha creación:</label>
+        <input type="text" id="observer_state_fecha_creacion" name="observer_state[fecha_creacion]" 
+        class="form-control" placeholder="Ingrese fecha"
+        value="<%= @observer_state != nil ? @observer_state.fecha_creacion : '' %>">
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="form-row">
+      <div class="col-md-12">
+        
+        <input type="submit" id="btnAceptar" value="Aceptar"
+        class="btn btn-primary" name="btnAceptar"/>
+
+      </div>
+    </div>
+  </div>
+
+<% end %>  

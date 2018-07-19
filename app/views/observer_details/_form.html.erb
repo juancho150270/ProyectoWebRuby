@@ -18,37 +18,37 @@
 
   <div class="field">
     <%= form.label :fecha_creacion %>
-    <%= form.datetime_select :fecha_creacion, id: :observer_detail_fecha_creacion %>
+    <%= form.date_select :fecha_creacion, id: :observer_detail_fecha_creacion %>
   </div>
 
   <div class="field">
     <%= form.label :fecha_modificacion %>
-    <%= form.datetime_select :fecha_modificacion, id: :observer_detail_fecha_modificacion %>
+    <%= form.date_select :fecha_modificacion, id: :observer_detail_fecha_modificacion %>
   </div>
 
   <div class="field">
-    <%= form.label :seguimiento_academico %>
-    <%= form.check_box :seguimiento_academico, id: :observer_detail_seguimiento_academico %>
+    <%= form.label :tipo_seguimiento %>
+    <%= form.number_field :tipo_seguimiento, id: :observer_detail_tipo_seguimiento %>
   </div>
 
   <div class="field">
     <%= form.label :fecha_sucesos %>
-    <%= form.datetime_select :fecha_sucesos, id: :observer_detail_fecha_sucesos %>
+    <%= form.date_select :fecha_sucesos, id: :observer_detail_fecha_sucesos %>
   </div>
 
   <div class="field">
     <%= form.label :observacion %>
-    <%= form.text_area :observacion, id: :observer_detail_observacion %>
+    <%= form.text_field :observacion, id: :observer_detail_observacion %>
   </div>
 
   <div class="field">
     <%= form.label :compromisos %>
-    <%= form.text_area :compromisos, id: :observer_detail_compromisos %>
+    <%= form.text_field :compromisos, id: :observer_detail_compromisos %>
   </div>
 
   <div class="field">
-    <%= form.label :obs_encabezados_id %>
-    <%= form.number_field :obs_encabezados_id, id: :observer_detail_obs_encabezados_id %>
+    <%= form.label :obs_encabezado_id %>
+    <%= form.number_field :obs_encabezado_id, id: :observer_detail_obs_encabezado_id %>
   </div>
 
   <div class="actions">

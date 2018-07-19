@@ -17,7 +17,7 @@ class AttendantsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create attendant" do
     assert_difference('Attendant.count') do
-      post attendants_url, params: { attendant: { correo: @attendant.correo, direccion: @attendant.direccion, estudiante_id: @attendant.estudiante_id, fecha_creacion: @attendant.fecha_creacion, parentesco: @attendant.parentesco, primer_apellido: @attendant.primer_apellido, primer_nombre: @attendant.primer_nombre, segundo_apellido: @attendant.segundo_apellido, segundo_nombre: @attendant.segundo_nombre, telefono_celular: @attendant.telefono_celular, telefono_fijo: @attendant.telefono_fijo } }
+      post attendants_url, params: { attendant: { cedula: @attendant.cedula, correo: @attendant.correo, direccion: @attendant.direccion, fecha_creacion: @attendant.fecha_creacion, genero: @attendant.genero, id: @attendant.id, parentesco: @attendant.parentesco, primer_apellido: @attendant.primer_apellido, primer_nombre: @attendant.primer_nombre, segundo_apellido: @attendant.segundo_apellido, segundo_nombre: @attendant.segundo_nombre, telefono_celular: @attendant.telefono_celular, telefono_fijo: @attendant.telefono_fijo, tipo_documento_id: @attendant.tipo_documento_id } }
     end
 
     assert_redirected_to attendant_url(Attendant.last)
@@ -34,7 +34,7 @@ class AttendantsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update attendant" do
-    patch attendant_url(@attendant), params: { attendant: { correo: @attendant.correo, direccion: @attendant.direccion, estudiante_id: @attendant.estudiante_id, fecha_creacion: @attendant.fecha_creacion, parentesco: @attendant.parentesco, primer_apellido: @attendant.primer_apellido, primer_nombre: @attendant.primer_nombre, segundo_apellido: @attendant.segundo_apellido, segundo_nombre: @attendant.segundo_nombre, telefono_celular: @attendant.telefono_celular, telefono_fijo: @attendant.telefono_fijo } }
+    patch attendant_url(@attendant), params: { attendant: { cedula: @attendant.cedula, correo: @attendant.correo, direccion: @attendant.direccion, fecha_creacion: @attendant.fecha_creacion, genero: @attendant.genero, id: @attendant.id, parentesco: @attendant.parentesco, primer_apellido: @attendant.primer_apellido, primer_nombre: @attendant.primer_nombre, segundo_apellido: @attendant.segundo_apellido, segundo_nombre: @attendant.segundo_nombre, telefono_celular: @attendant.telefono_celular, telefono_fijo: @attendant.telefono_fijo, tipo_documento_id: @attendant.tipo_documento_id } }
     assert_redirected_to attendant_url(@attendant)
   end
 

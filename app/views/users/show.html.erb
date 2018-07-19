@@ -1,44 +1,83 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Login:</strong>
-  <%= @user.login %>
-</p>
+<div class="container">
+  <div class="card mx-auto mt-5">
+    <div class="card-header">Usuario</div>
+    <div class="card-body">
 
-<p>
-  <strong>Perfil:</strong>
-  <%= @user.perfil_id %>
-</p>
+       <div class="form-group">
+        <div class="form-row">
+          <div class="col-md-3">
+            <strong>Id:</strong>
+            <%= @user.id %>
+          </div>
+          <div class="col-md-3">
+            <strong>Login:</strong>
+            <%= @user.login %>
+          </div>
+          <div class="col-md-3">
+            <strong>Perfil:</strong>
+            <%= @user.perfil_id %>
+          </div>
+          <div class="col-md-3">
+            <strong>Telefono:</strong>
+            <%= @user.telefono %>
+          </div>
+        </div>
+      </div>
 
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
+      <div class="form-group">
+        <div class="form-row">          
+          <div class="col-md-3">
+            <strong>Correo:</strong>
+            <%= @user.correo %>
+          </div>
+          <div class="col-md-3">
+            <strong>Fecha creación:</strong>
+            <%= @user.fecha_creacion %>
+          </div>
+          <div class="col-md-3">
+            <strong>Tipo identificación:</strong>
+            <%= @user.tipo_documento_id %>
+          </div>
+          <div class="col-md-3">
+            <strong>Identificación:</strong>
+            <%= @user.cedula %>
+          </div>
+        </div>
+      </div>
 
-<p>
-  <strong>Primer nombre:</strong>
-  <%= @user.primer_nombre %>
-</p>
+      <div class="form-group">
+        <div class="form-row">
+          <div class="col-md-3">
+            <strong>Primer nombre:</strong>
+            <%= @user.primer_nombre %>
+          </div>
+          <div class="col-md-3">
+            <strong>Segundo nombre:</strong>
+            <%= @user.segundo_nombre %>
+          </div>
+          <div class="col-md-3">
+            <strong>Primer apellido:</strong>
+            <%= @user.primer_apellido %>
+          </div>
+          <div class="col-md-3">
+            <strong>Segundo Apellido:</strong>
+            <%= @user.segundo_apellido %>
+          </div>
+        </div>
+      </div>      
 
-<p>
-  <strong>Segundo nombre:</strong>
-  <%= @user.segundo_nombre %>
-</p>
+      <div class="form-group">
+        <div class="form-row">
+            <div class="col-md-6">
+                <%= link_to 'Editar', edit_user_path(@user),{ class: "btn btn-info btn-sm" } %> 
+                <%= link_to 'Volver', users_path,{ class: "btn btn-info btn-sm" } %>
+            </div>
+        </div> 
+      </div>
+    </div>
+  </div> 
+</div>
 
-<p>
-  <strong>Primer apellido:</strong>
-  <%= @user.primer_apellido %>
-</p>
 
-<p>
-  <strong>Segundo apellido:</strong>
-  <%= @user.segundo_apellido %>
-</p>
-
-<p>
-  <strong>Telefono:</strong>
-  <%= @user.telefono %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>

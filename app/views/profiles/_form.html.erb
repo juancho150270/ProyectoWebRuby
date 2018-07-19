@@ -13,7 +13,7 @@
 
   <div class="form-group">
     <div class="form-row">
-      <div class="col-md-6">
+      <div class="col-md-3">
 
         <label id="lblId">Id:</label>
         <input type="number" id="profile_id" name="profile[id]" 
@@ -21,14 +21,25 @@
         value="<%= @profile != nil ? @profile.id : '' %>">
         
       </div>
-      <div class="col-md-6">
+      
+      <div class="col-md-3">
         
-        <label id="lblDescripcion">Descripción:</label>
+        <label id="lbldescripcion">Descripción:</label>
         <input type="text" id="profile_descripcion" name="profile[descripcion]" 
-        class="form-control" placeholder="Ingrese descripcion"
+        class="form-control" placeholder="Ingrese descripción"
         value="<%= @profile != nil ? @profile.descripcion : '' %>">
 
       </div>
+
+      <div class="col-md-3">
+        
+        <label id="lblfecha_creacion">Fecha creación:</label>
+        <input type="text" id="profile_fecha_creacion" name="profile[fecha_creacion]" 
+        class="form-control" placeholder="Ingrese fecha"
+        value="<%= @profile != nil ? @profile.fecha_creacion : '' %>">
+
+      </div>
+
     </div>
   </div>
 

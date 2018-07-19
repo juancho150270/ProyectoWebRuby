@@ -69,6 +69,6 @@ class ObserverDetailsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def observer_detail_params
-      params.require(:observer_detail).permit(:id, :fecha_creacion, :fecha_modificacion, :seguimiento_academico, :fecha_sucesos, :observacion, :compromisos, :obs_encabezados_id)
+      params.require(:observer_detail).permit(:id, :fecha_creacion, :fecha_modificacion, :tipo_seguimiento, :fecha_sucesos, :observacion, :compromisos, :obs_encabezado_id)
     end
 end

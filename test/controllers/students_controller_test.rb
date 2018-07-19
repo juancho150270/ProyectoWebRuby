@@ -17,7 +17,7 @@ class StudentsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create student" do
     assert_difference('Student.count') do
-      post students_url, params: { student: { direccion: @student.direccion, fecha_creacion: @student.fecha_creacion, fecha_nacimiento: @student.fecha_nacimiento, genero_id: @student.genero_id, grado_id: @student.grado_id, imagen: @student.imagen, jornada_id: @student.jornada_id, primer_apellido: @student.primer_apellido, primer_nombre: @student.primer_nombre, segundo_apellido: @student.segundo_apellido, segundo_nombre: @student.segundo_nombre } }
+      post students_url, params: { student: { acudiente_id: @student.acudiente_id, direccion: @student.direccion, fecha_creacion: @student.fecha_creacion, fecha_nacimiento: @student.fecha_nacimiento, genero_id: @student.genero_id, grado_id: @student.grado_id, id: @student.id, imagen: @student.imagen, jornada_id: @student.jornada_id, numero_identificacion: @student.numero_identificacion, primer_apellido: @student.primer_apellido, primer_nombre: @student.primer_nombre, segundo_apellido: @student.segundo_apellido, segundo_nombre: @student.segundo_nombre, tipo_documentacion_id: @student.tipo_documentacion_id } }
     end
 
     assert_redirected_to student_url(Student.last)
@@ -34,7 +34,7 @@ class StudentsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update student" do
-    patch student_url(@student), params: { student: { direccion: @student.direccion, fecha_creacion: @student.fecha_creacion, fecha_nacimiento: @student.fecha_nacimiento, genero_id: @student.genero_id, grado_id: @student.grado_id, imagen: @student.imagen, jornada_id: @student.jornada_id, primer_apellido: @student.primer_apellido, primer_nombre: @student.primer_nombre, segundo_apellido: @student.segundo_apellido, segundo_nombre: @student.segundo_nombre } }
+    patch student_url(@student), params: { student: { acudiente_id: @student.acudiente_id, direccion: @student.direccion, fecha_creacion: @student.fecha_creacion, fecha_nacimiento: @student.fecha_nacimiento, genero_id: @student.genero_id, grado_id: @student.grado_id, id: @student.id, imagen: @student.imagen, jornada_id: @student.jornada_id, numero_identificacion: @student.numero_identificacion, primer_apellido: @student.primer_apellido, primer_nombre: @student.primer_nombre, segundo_apellido: @student.segundo_apellido, segundo_nombre: @student.segundo_nombre, tipo_documentacion_id: @student.tipo_documentacion_id } }
     assert_redirected_to student_url(@student)
   end
 

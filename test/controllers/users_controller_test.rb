@@ -17,7 +17,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create user" do
     assert_difference('User.count') do
-      post users_url, params: { user: { login: @user.login, password: @user.password, perfil_id: @user.perfil_id, primer_apellido: @user.primer_apellido, primer_nombre: @user.primer_nombre, segundo_apellido: @user.segundo_apellido, segundo_nombre: @user.segundo_nombre, telefono: @user.telefono } }
+      post users_url, params: { user: { cedula: @user.cedula, correo: @user.correo, fecha_creacion: @user.fecha_creacion, id: @user.id, login: @user.login, password: @user.password, perfil_id: @user.perfil_id, primer_apellido: @user.primer_apellido, primer_nombre: @user.primer_nombre, segundo_apellido: @user.segundo_apellido, segundo_nombre: @user.segundo_nombre, telefono: @user.telefono, tipo_documento_id: @user.tipo_documento_id } }
     end
 
     assert_redirected_to user_url(User.last)
@@ -34,7 +34,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update user" do
-    patch user_url(@user), params: { user: { login: @user.login, password: @user.password, perfil_id: @user.perfil_id, primer_apellido: @user.primer_apellido, primer_nombre: @user.primer_nombre, segundo_apellido: @user.segundo_apellido, segundo_nombre: @user.segundo_nombre, telefono: @user.telefono } }
+    patch user_url(@user), params: { user: { cedula: @user.cedula, correo: @user.correo, fecha_creacion: @user.fecha_creacion, id: @user.id, login: @user.login, password: @user.password, perfil_id: @user.perfil_id, primer_apellido: @user.primer_apellido, primer_nombre: @user.primer_nombre, segundo_apellido: @user.segundo_apellido, segundo_nombre: @user.segundo_nombre, telefono: @user.telefono, tipo_documento_id: @user.tipo_documento_id } }
     assert_redirected_to user_url(@user)
   end
 

@@ -17,7 +17,7 @@ class WorkingDaysControllerTest < ActionDispatch::IntegrationTest
 
   test "should create working_day" do
     assert_difference('WorkingDay.count') do
-      post working_days_url, params: { working_day: { descripcion: @working_day.descripcion, fecha_creacion: @working_day.fecha_creacion } }
+      post working_days_url, params: { working_day: { descripcion: @working_day.descripcion, fecha_creacion: @working_day.fecha_creacion, id: @working_day.id } }
     end
 
     assert_redirected_to working_day_url(WorkingDay.last)
@@ -34,7 +34,7 @@ class WorkingDaysControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update working_day" do
-    patch working_day_url(@working_day), params: { working_day: { descripcion: @working_day.descripcion, fecha_creacion: @working_day.fecha_creacion } }
+    patch working_day_url(@working_day), params: { working_day: { descripcion: @working_day.descripcion, fecha_creacion: @working_day.fecha_creacion, id: @working_day.id } }
     assert_redirected_to working_day_url(@working_day)
   end
 

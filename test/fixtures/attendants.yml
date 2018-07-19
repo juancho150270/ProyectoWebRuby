@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   primer_nombre: MyString
   segundo_nombre: MyString
   primer_apellido: MyString
@@ -10,10 +11,13 @@ one:
   direccion: MyString
   correo: MyString
   parentesco: 1
-  fecha_creacion: 2018-07-17 22:52:58
-  estudiante_id: 1
+  fecha_creacion: 2018-07-19
+  cedula: 1
+  tipo_documento_id: 1
+  genero: 1
 
 two:
+  id: 1
   primer_nombre: MyString
   segundo_nombre: MyString
   primer_apellido: MyString
@@ -23,5 +27,7 @@ two:
   direccion: MyString
   correo: MyString
   parentesco: 1
-  fecha_creacion: 2018-07-17 22:52:58
-  estudiante_id: 1
+  fecha_creacion: 2018-07-19
+  cedula: 1
+  tipo_documento_id: 1
+  genero: 1

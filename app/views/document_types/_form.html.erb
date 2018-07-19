@@ -1,0 +1,57 @@
+<%= form_with(model: document_type, local: true) do |form| %>
+  <% if document_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(document_type.errors.count, "error") %> prohibited this document_type from being saved:</h2>
+
+      <ul>
+      <% document_type.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <div class="form-row">
+      <div class="col-md-3">
+
+        <label id="lblId">Id:</label>
+        <input type="number" id="document_type_id" name="document_type[id]" 
+        class="form-control" placeholder="Ingrese id"
+        value="<%= @document_type != nil ? @document_type.id : '' %>">
+        
+      </div>
+      
+      <div class="col-md-3">
+        
+        <label id="lbldescripcion">Descripción:</label>
+        <input type="text" id="document_type_descripcion" name="document_type[descripcion]" 
+        class="form-control" placeholder="Ingrese descripción"
+        value="<%= @document_type != nil ? @document_type.descripcion : '' %>">
+
+      </div>
+
+      <div class="col-md-3">
+        
+        <label id="lblfecha_creacion">Fecha creación:</label>
+        <input type="text" id="document_type_fecha_creacion" name="document_type[fecha_creacion]" 
+        class="form-control" placeholder="Ingrese fecha"
+        value="<%= @document_type != nil ? @document_type.fecha_creacion : '' %>">
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="form-row">
+      <div class="col-md-12">
+        
+        <input type="submit" id="btnAceptar" value="Aceptar"
+        class="btn btn-primary" name="btnAceptar"/>
+
+      </div>
+    </div>
+  </div>
+
+<% end %>  

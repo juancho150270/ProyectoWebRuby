@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="card mx-auto mt-5">
+    <div class="card-header">Nuevo tipo de documento</div>
+    <div class="card-body">
+        <%= render 'form', document_type: @document_type %>
+          <div class="form-group">
+            <div class="form-row">
+                <div class="col-md-6">
+                    <%= link_to 'Volver', document_types_path,{ class: "btn btn-info btn-sm" } %>
+                </div>
+            </div>
+        </div>
+   </div>
+  </div>
+</div>
+

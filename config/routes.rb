@@ -1,14 +1,27 @@
 Rails.application.routes.draw do
-  resources :students, :path => "students"
-  resources :attendants, :path => "attendants"
-  resources :tracing_types, :path => "tracing_types"
-  resources :working_days, :path => "working_days"
-  resources :grades, :path => "grades"
-  resources :genders, :path => "genders"
-  resources :observer_details, :path => "observer_details"
-  resources :observer_heads, :path => "observer_heads"
-  resources :profiles, :path => "profiles"
-  resources :users, :path => "users"
+  resources :kin_types
+  resources :document_types
+  resources :observer_states
+  resources :working_days
+  resources :users
+  resources :tracing_types
+  resources :profiles
+  resources :observer_heads
+  resources :observer_details
+  resources :grades
+  resources :genders
+  resources :attendants
+  resources :students
+
+  get "/students/index"
+  get "/users/index"
+  get "/profiles/index"
+  get "/attendants/index"
+  get "/genders/index"
+  get "/grades/index"
+  get "/observer_heads/index"
+  get "/tracing_types/index"
+  get "/working_days/index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   #Crear un alias, con la asignacion le indico el controlador y accion.
   # get "users" => "users#index"

@@ -17,7 +17,7 @@ class TracingTypesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create tracing_type" do
     assert_difference('TracingType.count') do
-      post tracing_types_url, params: { tracing_type: { descripcion: @tracing_type.descripcion, fecha_creacion: @tracing_type.fecha_creacion } }
+      post tracing_types_url, params: { tracing_type: { descripcion: @tracing_type.descripcion, fecha_creacion: @tracing_type.fecha_creacion, id: @tracing_type.id } }
     end
 
     assert_redirected_to tracing_type_url(TracingType.last)
@@ -34,7 +34,7 @@ class TracingTypesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update tracing_type" do
-    patch tracing_type_url(@tracing_type), params: { tracing_type: { descripcion: @tracing_type.descripcion, fecha_creacion: @tracing_type.fecha_creacion } }
+    patch tracing_type_url(@tracing_type), params: { tracing_type: { descripcion: @tracing_type.descripcion, fecha_creacion: @tracing_type.fecha_creacion, id: @tracing_type.id } }
     assert_redirected_to tracing_type_url(@tracing_type)
   end
 
