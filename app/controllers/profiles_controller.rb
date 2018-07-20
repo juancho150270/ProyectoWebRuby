@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
-
+  layout 'home'
   # GET /profiles
   # GET /profiles.json
   def index
@@ -24,7 +24,9 @@ class ProfilesController < ApplicationController
   # POST /profiles
   # POST /profiles.json
   def create
-    @profile = Profile.new(profile_params)
+    @profile = Profile.new
+
+
 
     respond_to do |format|
       if @profile.save

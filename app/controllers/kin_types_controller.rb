@@ -1,6 +1,6 @@
 class KinTypesController < ApplicationController
   before_action :set_kin_type, only: [:show, :edit, :update, :destroy]
-
+  
   # GET /kin_types
   # GET /kin_types.json
   def index

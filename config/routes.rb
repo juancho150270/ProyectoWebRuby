@@ -12,9 +12,8 @@ Rails.application.routes.draw do
   resources :genders
   resources :attendants
   resources :students
-
+  get "observador" => "users#home"
   get "/students/index"
-  get "/users/index"
   get "/profiles/index"
   get "/attendants/index"
   get "/genders/index"
