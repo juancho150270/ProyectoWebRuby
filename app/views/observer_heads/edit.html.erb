@@ -1,6 +1,16 @@
-<h1>Editing Observer Head</h1>
-
-<%= render 'form', observer_head: @observer_head %>
-
-<%= link_to 'Show', @observer_head %> |
-<%= link_to 'Back', observer_heads_path %>
+< div class="container">
+    <div class="card mx-auto mt-5">
+        < div class="card-header"> Editar Encabezado Observador </div>
+    < div class="card-body">
+        <%= render 'form', observer_head:@observer_head %>
+            < div class="form-group">
+                < div class="form-row">
+                    < div class="col-md-6">
+                        <%= link_to 'Show', @observer_head,  {class:"btn btn-info btn-sm"} %> |
+                            <%= link_to 'Volver', observer_heads_path,  {class:"btn btn-info btn-sm"} %>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+                                </div>

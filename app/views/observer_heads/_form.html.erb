@@ -11,37 +11,76 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :id %>
-    <%= form.number_field :id, id: :observer_head_id %>
+  <div class="form-group">
+    <div class="form-row">
+      <div class="col-md-3">
+        <label id="lblId">Id:</label>
+        <input type="number" id="observer_head_id" name="observer_head[id]" 
+        class="form-control" placeholder="Ingrese id"
+        value="<%= @observer_head != nil ? @observer_head.id : '' %>">        
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-md-3">
+        <label id="lblFecha_Creacion">Fecha_Creacion:</label>
+        <input type="text" id="observer_head_fecha_creacion" name="observer_head[fecha_creacion]" 
+        class="form-control" placeholder="Ingrese Fecha"
+        value="<%= @observer_head != nil ? @observer_head.fecha_creacion : '' %>">        
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-md-3">
+        <label id="lblEstudiante_id">Estudiante_id:</label>
+        <input type="number" id="observer_head_estudiante_id" name="observer_head[estudiante_id]" 
+        class="form-control" placeholder="Ingrese Id Estudiante"
+        value="<%= @observer_head != nil ? @observer_head.estudiante_id : '' %>">        
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-md-3">
+        <label id="lblUsuario_id">Usuario_id:</label>
+        <input type="number" id="observer_head_usuario_id" name="observer_head[usuario_id]" 
+        class="form-control" placeholder="Ingrese Id Usuario"
+        value="<%= @observer_head != nil ? @observer_head.usuario_id : '' %>">        
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-md-3">
+        <label id="lblTitulo">Titulo:</label>
+        <input type="text" id="observer_head_titulo" name="observer_head[titulo]" 
+        class="form-control" placeholder="Ingrese titulo"
+        value="<%= @observer_head != nil ? @observer_head.titulo : '' %>">        
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-md-3">
+        <label id="lblEstado">estado:</label>
+        <input type="number" id="observer_head_estado" name="observer_head[estado]" 
+        class="form-control" placeholder="Ingrese Estado"
+        value="<%= @observer_head != nil ? @observer_head.estado : '' %>">        
+      </div>
+    </div>
+
   </div>
 
-  <div class="field">
-    <%= form.label :fecha_creacion %>
-    <%= form.date_select :fecha_creacion, id: :observer_head_fecha_creacion %>
-  </div>
+  <div class="form-group">
+    <div class="form-row">
+      <div class="col-md-12">
+        
+        <input type="submit" id="btnAceptar" value="Aceptar"
+        class="btn btn-primary" name="btnAceptar"/>
 
-  <div class="field">
-    <%= form.label :estudiante_id %>
-    <%= form.number_field :estudiante_id, id: :observer_head_estudiante_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :usuario_id %>
-    <%= form.number_field :usuario_id, id: :observer_head_usuario_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :titulo %>
-    <%= form.text_field :titulo, id: :observer_head_titulo %>
-  </div>
-
-  <div class="field">
-    <%= form.label :estado %>
-    <%= form.number_field :estado, id: :observer_head_estado %>
-  </div>
+      </div>
+    </div>
+  </div>  
 
   <div class="actions">
     <%= form.submit %>
   </div>
+
 <% end %>
