@@ -17,7 +17,11 @@
           </div>
           <div class="col-md-3">
             <strong>Perfil:</strong>
-            <%= @user.perfil_id %>
+            <!--<%= @user.perfil_id %>-->
+            
+            <%perfiluser=Profile.find_by(:id=>@user.perfil_id)%>
+            <%= perfiluser.descripcion%>
+
           </div>
           <div class="col-md-3">
             <strong>Telefono:</strong>

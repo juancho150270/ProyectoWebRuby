@@ -1,5 +1,6 @@
 class WorkingDaysController < ApplicationController
   before_action :set_working_day, only: [:show, :edit, :update, :destroy]
+  layout 'home'
 
   # GET /working_days
   # GET /working_days.json

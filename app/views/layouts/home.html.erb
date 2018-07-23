@@ -53,13 +53,7 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseExamplePages">
             <li>
-              <a href="#">Nuevo registro</a>
-            </li>
-            <li>
-              <a href="#">Consultar registro</a>
-            </li>
-            <li>
-              <a href="#">Modificar registro</a>
+              <%= link_to 'Observador', {:controller=>:observer_heads,:action=>:index} %>
             </li>
           </ul>
         </li>
@@ -89,7 +83,7 @@
               <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2Roles">Roles</a>
               <ul class="sidenav-third-level collapse" id="collapseMulti2Roles">
                 <li>
-                  <a href="/profiles/index">Rol</a>
+                  <%= link_to 'Rol', {:controller=>:profiles,:action=>:index} %>
                 </li>
               </ul>
             </li>
@@ -141,6 +135,38 @@
                 </li>
               </ul>
             </li>
+            <li>
+              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2working_days">Jornada</a>
+              <ul class="sidenav-third-level collapse" id="collapseMulti2working_days">
+                <li>
+                  <a href="/working_days/index">Jornada</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2working_days">Jornada</a>
+              <ul class="sidenav-third-level collapse" id="collapseMulti2working_days">
+                <li>
+                  <a href="/working_days/index">Jornada</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2working_days">Jornada</a>
+              <ul class="sidenav-third-level collapse" id="collapseMulti2working_days">
+                <li>
+                  <a href="/working_days/index">Jornada</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2working_days">Jornada</a>
+              <ul class="sidenav-third-level collapse" id="collapseMulti2working_days">
+                <li>
+                  <a href="/working_days/index">Jornada</a>
+                </li>
+              </ul>
+            </li>
           </ul>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Acerca del sistema">
@@ -157,18 +183,14 @@
           </a>
         </li>
       </ul>
-      <ul class="navbar-nav ml-auto">
-        
+      <ul class="navbar-nav ml-auto">        
         <li class="nav-item">
           <form class="form-inline my-2 my-lg-0 mr-lg-2">
-            <div class="input-group">
-              <input class="form-control" type="text" placeholder="Buscar">
-              <span class="input-group-append">
-                <button class="btn btn-primary" type="button">
-                  <i class="fa fa-search"></i>
-                </button>
-              </span>
-            </div>
+            
+              <label class="text-white bg-dark" id="lblUser"><%=@login_usuario%></label>   
+              <label class="text-white bg-dark" id="lblUser"><%=@perfil_usuario%></label>   
+                         
+            
           </form>
         </li>
         <li class="nav-item">
@@ -207,7 +229,8 @@
           <div class="modal-body">Seleccione "Cerrar sesión" a continuación si está listo para finalizar su sesión actual.</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-            <a class="btn btn-primary" href="login.html">Cerrar sesión</a>
+            <a class="btn btn-primary" href="cerrarsesion">Cerrar sesión</a>
+            
           </div>
         </div>
       </div>

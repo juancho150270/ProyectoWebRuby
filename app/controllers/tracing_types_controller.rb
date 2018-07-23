@@ -1,5 +1,6 @@
 class TracingTypesController < ApplicationController
   before_action :set_tracing_type, only: [:show, :edit, :update, :destroy]
+  layout 'home'
 
   # GET /tracing_types
   # GET /tracing_types.json

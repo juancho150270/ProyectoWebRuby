@@ -1,5 +1,6 @@
 class ObserverStatesController < ApplicationController
   before_action :set_observer_state, only: [:show, :edit, :update, :destroy]
+  layout 'home'
 
   # GET /observer_states
   # GET /observer_states.json

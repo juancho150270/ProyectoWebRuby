@@ -1,5 +1,6 @@
 class GradesController < ApplicationController
   before_action :set_grade, only: [:show, :edit, :update, :destroy]
+  layout 'home'
 
   # GET /grades
   # GET /grades.json

@@ -1,6 +1,6 @@
 class AttendantsController < ApplicationController
   before_action :set_attendant, only: [:show, :edit, :update, :destroy]
-
+  layout 'home'
   # GET /attendants
   # GET /attendants.json
   def index
