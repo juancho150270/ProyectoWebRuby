@@ -32,18 +32,11 @@
         <label id="lblperfil_id">Perfil:</label>
 
         <%@perfiles = Profile.all%>
-        
-
-        <select id="ddlPerfiles" name="ddlPerfiles" class="form-control">
+                <select id="ddlPerfiles" name="ddlPerfiles" class="form-control">
                             <% @perfiles.each do |item|%>
                                 <option value="<%= item.id %>" <%= @user.perfil_id == item.id ? 'selected' : '' %> ><%= item.descripcion %></option>
                             <% end %>
                         </select>
-
-        <!--<input type="text" id="user_perfil_id" name="user[perfil_id]" 
-        class="form-control" placeholder="Ingrese perfil_id"
-        value="<%= @user != nil ? @user.perfil_id : '' %>">-->
-
       </div>
 
       <div class="col-md-3">
