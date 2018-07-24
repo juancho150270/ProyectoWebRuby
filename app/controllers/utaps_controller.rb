@@ -13,8 +13,10 @@ class UtapsController < ApplicationController
                 render "home", layout:"home"
             else
                 render "home", layout:"home_user"
+                
             end
         else
+            #NotifyMailer.send_mail(params[:txtUser],'Ingreso incorrecto').deliver
             @mensaje = 'Usuario o clave incorrecto'
             @tipo = 'warning'
             render "login"

@@ -33,9 +33,10 @@
 
         <%@perfiles = Profile.all%>
         
+
         <select id="ddlPerfiles" name="ddlPerfiles" class="form-control">
                             <% @perfiles.each do |item|%>
-                                <option value="<%= item.id %>" <%=if @user.perfil_id==item.id 'selected' end%>><%= item.descripcion %></option>
+                                <option value="<%= item.id %>" <%= @user.perfil_id == item.id ? 'selected' : '' %> ><%= item.descripcion %></option>
                             <% end %>
                         </select>
 
