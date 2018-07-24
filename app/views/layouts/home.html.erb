@@ -59,115 +59,44 @@
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Administrador">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
-            <i class="fa fa-toolbox"></i>
+            <i class="fa fa-align-left"></i>
             <span class="nav-link-text">Menu Administrador</span>
           </a>
-          <ul class="sidenav-second-level collapse" id="collapseMulti">
-            <li>
-              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2Estudiantes">Estudiantes</a>
-              <ul class="sidenav-third-level collapse" id="collapseMulti2Estudiantes">
-                <li>
-                  <a href="/students/index">Estudiante</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2Usuarios">Usuarios</a>
-              <ul class="sidenav-third-level collapse" id="collapseMulti2Usuarios">
+
+          <ul class="sidenav-second-level collapse" id="collapseMulti">           
                 <li>
                   <%= link_to 'Usuario', {:controller=>:users,:action=>:index} %>
                 </li>
-              </ul>
-            </li>
-            <li>
-              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2Roles">Roles</a>
-              <ul class="sidenav-third-level collapse" id="collapseMulti2Roles">
+                <li>
+                  <%= link_to 'Estudiante', {:controller=>:students,:action=>:index} %>
+                </li>
+                <li>
+                <%= link_to 'Acudiente', {:controller=>:attendants,:action=>:index} %>
+                </li>
                 <li>
                   <%= link_to 'Rol', {:controller=>:profiles,:action=>:index} %>
                 </li>
-              </ul>
-            </li>
-            <li>
-              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2attendants">Acudiente</a>
-              <ul class="sidenav-third-level collapse" id="collapseMulti2attendants">
                 <li>
-                  <a href="/attendants/index">Acudiente</a>
+                <%= link_to 'Grados', {:controller=>:grades,:action=>:index} %>
                 </li>
-              </ul>
-            </li>
-            <li>
-              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2genders">Genero</a>
-              <ul class="sidenav-third-level collapse" id="collapseMulti2genders">
                 <li>
-                  <a href="/genders/index">Genero</a>
+                <%= link_to 'Jornada', {:controller=>:working_days,:action=>:index} %>
                 </li>
-              </ul>
-            </li>
-            <li>
-              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2grades">Grados</a>
-              <ul class="sidenav-third-level collapse" id="collapseMulti2grades">
                 <li>
-                  <a href="/grades/index">Grados</a>
+                <%= link_to 'Estado de observador', {:controller=>:observer_states,:action=>:index} %>
                 </li>
-              </ul>
-            </li>
-            <li>
-              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2observer_heads">Observador</a>
-              <ul class="sidenav-third-level collapse" id="collapseMulti2observer_heads">
                 <li>
-                  <a href="/observer_heads/index">Observador</a>
+                <%= link_to 'Tipo de seguimiento', {:controller=>:tracing_types,:action=>:index} %>
                 </li>
-              </ul>
-            </li>
-            <li>
-              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2tracing_types">Tipo de seguimiento</a>
-              <ul class="sidenav-third-level collapse" id="collapseMulti2tracing_types">
                 <li>
-                  <a href="/tracing_types/index">Tipo de seguimiento</a>
+                  <%= link_to 'Tipo acudiente', {:controller=>:kin_types,:action=>:index} %>
                 </li>
-              </ul>
-            </li>
-            <li>
-              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2working_days">Jornada</a>
-              <ul class="sidenav-third-level collapse" id="collapseMulti2working_days">
                 <li>
-                  <a href="/working_days/index">Jornada</a>
+                  <%= link_to 'Tipo de documento', {:controller=>:document_types,:action=>:index} %>
+                </li><li>
+                <%= link_to 'Genero', {:controller=>:genders,:action=>:index} %>
                 </li>
-              </ul>
-            </li>
-            <li>
-              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2working_days">Jornada</a>
-              <ul class="sidenav-third-level collapse" id="collapseMulti2working_days">
-                <li>
-                  <a href="/working_days/index">Jornada</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2working_days">Jornada</a>
-              <ul class="sidenav-third-level collapse" id="collapseMulti2working_days">
-                <li>
-                  <a href="/working_days/index">Jornada</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2working_days">Jornada</a>
-              <ul class="sidenav-third-level collapse" id="collapseMulti2working_days">
-                <li>
-                  <a href="/working_days/index">Jornada</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2working_days">Jornada</a>
-              <ul class="sidenav-third-level collapse" id="collapseMulti2working_days">
-                <li>
-                  <a href="/working_days/index">Jornada</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
+            </ul>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Acerca del sistema">
           <a class="nav-link" href="#">

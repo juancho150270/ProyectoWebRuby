@@ -32,7 +32,7 @@
         <label id="lblperfil_id">Perfil:</label>
 
         <%@perfiles = Profile.all%>
-                <select id="ddlPerfiles" name="ddlPerfiles" class="form-control">
+                <select id="user_perfil_id" name="user[perfil_id]" class="form-control">
                             <% @perfiles.each do |item|%>
                                 <option value="<%= item.id %>" <%= @user.perfil_id == item.id ? 'selected' : '' %> ><%= item.descripcion %></option>
                             <% end %>
@@ -41,7 +41,7 @@
 
       <div class="col-md-3">
         <label id="lblpassword">Password:</label>
-        <input type="text" id="user_password" name="user[password]" 
+        <input type="password" id="user_password" name="user[password]" 
         class="form-control" placeholder="Ingrese password"
         value="<%= @user != nil ? @user.password : '' %>">
       </div>
