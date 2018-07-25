@@ -34,7 +34,7 @@
       <div class="col-md-3">
         <label id="lblEstudiante_id">Estudiante_id:</label>
         <input type="number" id="observer_head_estudiante_id" name="observer_head[estudiante_id]" 
-        class="form-control" placeholder="Ingrese Id Estudiante"
+        class="form-control" placeholder="Ingrese Id Estudiante" required="required"
         value="<%= @observer_head != nil ? @observer_head.estudiante_id : '' %>">        
       </div>
     </div>
@@ -43,7 +43,7 @@
       <div class="col-md-3">
         <label id="lblUsuario_id">Usuario_id:</label>
         <input type="number" id="observer_head_usuario_id" name="observer_head[usuario_id]" 
-        class="form-control" placeholder="Ingrese Id Usuario"
+        class="form-control" placeholder="Ingrese Id Usuario" required="required"
         value="<%= @observer_head != nil ? @observer_head.usuario_id : '' %>">        
       </div>
     </div>
@@ -52,7 +52,7 @@
       <div class="col-md-3">
         <label id="lblTitulo">Titulo:</label>
         <input type="text" id="observer_head_titulo" name="observer_head[titulo]" 
-        class="form-control" placeholder="Ingrese titulo"
+        class="form-control" placeholder="Ingrese titulo" required="required"
         value="<%= @observer_head != nil ? @observer_head.titulo : '' %>">        
       </div>
     </div>

@@ -3,23 +3,23 @@ class UtapsController < ApplicationController
         render "index", layout:"home_principal"
     end
     def login
-        render "login2"
+        render "login2", layout:"home_principal"
     end
     def olvido_clave
-        render "olvido"
+        render "olvido", layout:"home_principal"
     end
     def recuperar_clave
         if User.exists?(:correo=>params[:txtCorreo])
             usuario=User.find_by(:correo=>params[:txtCorreo])
             @clave_recuperada=usuario.password
-            @mensaje = 'Por favor revise su cuenta de correo'
+            @mensaje = 'Se envio la contraseña a su cuenta de correo'
             @tipo = 'success'
             NotifyMailer.send_mail_clave_recuperada(params[:txtCorreo],'Recuperacion de contraseña',@clave_recuperada).deliver
-            render "login2"
+            render "login2", layout:"home_principal"
         else
             @mensaje = 'La direccion de correo no existe'
             @tipo = 'warning'
-            render "login2"
+            render "login2", layout:"home_principal"
         end
     end
     def ingresar
@@ -37,8 +37,8 @@ class UtapsController < ApplicationController
             end
         else
             @mensaje = 'Usuario o clave incorrecto'
-            @tipo = 'warning'
-            render "login"
+            @tipo = 'warning'            
+            render "login2", layout:"home_principal"
         end
     end
 end

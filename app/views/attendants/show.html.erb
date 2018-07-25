@@ -13,11 +13,13 @@
           </div>
           <div class="col-md-3">
             <strong>Parentesco:</strong>
-            <%= @attendant.parentesco %>
+            <%des_parentesco=KinType.find_by(:id=>@attendant.parentesco)%>
+            <%=des_parentesco.descripcion%>
           </div>
           <div class="col-md-3">
             <strong>Tipo documento:</strong>
-            <%= @attendant.tipo_documento_id %>
+            <%des_tipo_documento_id=DocumentType.find_by(:id=>@attendant.tipo_documento_id)%>
+            <%=des_tipo_documento_id.descripcion%>            
           </div>
           <div class="col-md-3">
             <strong>Identificación:</strong>
@@ -74,7 +76,8 @@
         <div class="form-row">
           <div class="col-md-3">
             <strong>Genero:</strong>
-            <%= @attendant.genero %>
+            <%des_Genero=Gender.find_by(:id=>@attendant.genero)%>
+            <%=des_Genero.descripcion%>
           </div>
           <div class="col-md-3">
             <strong>Fecha creación:</strong>

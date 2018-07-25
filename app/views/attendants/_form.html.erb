@@ -23,9 +23,17 @@
       
       <div class="col-md-3">        
         <label id="lblparentesco">Parentesco:</label>
-        <input type="text" id="attendant_parentesco" name="attendant[parentesco]" 
-        class="form-control" placeholder="Ingrese parentesco"
-        value="<%= @attendant != nil ? @attendant.parentesco : '' %>">
+        
+
+        <%@Parentesco = KinType.all%>
+        <select id="attendant_parentesco" name="attendant[parentesco]" class="form-control">
+          <% @Parentesco.each do |item|%>
+            <option value="<%= item.id %>" <%= @attendant.parentesco == item.id ? 'selected' : '' %> ><%= item.descripcion %></option>
+          <% end %>
+        </select>
+
+
+
       </div>
 
       <div class="col-md-3">
@@ -38,7 +46,7 @@
       <div class="col-md-3">
         <label id="lblcedula">Identificación:</label>
         <input type="text" id="attendant_cedula" name="attendant[cedula]" 
-        class="form-control" placeholder="Ingrese identificación"
+        class="form-control" placeholder="Ingrese identificación" required="required"
         value="<%= @attendant != nil ? @attendant.cedula : '' %>">
       </div>
 
@@ -51,7 +59,7 @@
       <div class="col-md-3">
         <label id="lblprimer_nombre">Primer Nombre:</label>
         <input type="text" id="attendant_primer_nombre" name="attendant[primer_nombre]" 
-        class="form-control" placeholder="Primer Nombre"
+        class="form-control" placeholder="Primer Nombre" required="required"
         value="<%= @attendant != nil ? @attendant.primer_nombre : '' %>">        
       </div>
       
@@ -65,7 +73,7 @@
       <div class="col-md-3">
         <label id="lblprimer_apellido">Primer Apellido:</label>
         <input type="text" id="attendant_primer_apellido" name="attendant[primer_apellido]" 
-        class="form-control" placeholder="Primer Apellido"
+        class="form-control" placeholder="Primer Apellido" required="required"
         value="<%= @attendant != nil ? @attendant.primer_apellido : '' %>">
       </div>
 
@@ -85,14 +93,14 @@
       <div class="col-md-3">
         <label id="lbltelefono_celular">Telefono celular:</label>
         <input type="text" id="attendant_telefono_celular" name="attendant[telefono_celular]" 
-        class="form-control" placeholder="Telefono celular"
+        class="form-control" placeholder="Telefono celular" required="required"
         value="<%= @attendant != nil ? @attendant.telefono_celular : '' %>">        
       </div>
 
       <div class="col-md-3">
         <label id="lbltelefono_fijo">Telefono fijo:</label>
         <input type="text" id="attendant_telefono_fijo" name="attendant[telefono_fijo]" 
-        class="form-control" placeholder="Telefono fijo"
+        class="form-control" placeholder="Telefono fijo" required="required"
         value="<%= @attendant != nil ? @attendant.telefono_fijo : '' %>">        
       </div>
       
@@ -106,7 +114,7 @@
       <div class="col-md-3">
         <label id="lbldireccion">Dirección:</label>
         <input type="text" id="attendant_direccion" name="attendant[direccion]" 
-        class="form-control" placeholder="Dirección"
+        class="form-control" placeholder="Dirección" required="required"
         value="<%= @attendant != nil ? @attendant.direccion : '' %>">
       </div>
 

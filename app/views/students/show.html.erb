@@ -13,11 +13,13 @@
           </div>
           <div class="col-md-3">
             <strong>Grado:</strong>
-            <%= @student.grado_id %>
+            <%des_Grado=Grade.find_by(:id=>@student.grado_id)%>
+            <%=des_Grado.descripcion%>
           </div>
           <div class="col-md-3">
             <strong>Tipo documento:</strong>
-            <%= @student.tipo_documentacion_id %>
+            <%des_tipo_documento_id=DocumentType.find_by(:id=>@student.tipo_documentacion_id)%>
+            <%=des_tipo_documento_id.descripcion%>
           </div>
           <div class="col-md-3">
             <strong>Identificación:</strong>
@@ -51,7 +53,8 @@
         <div class="form-row">          
           <div class="col-md-3">
             <strong>Genero:</strong>
-            <%= @student.genero_id %>
+            <%des_Genero=Gender.find_by(:id=>@student.genero_id)%>
+            <%=des_Genero.descripcion%>
           </div>
           <div class="col-md-3">
             <strong>Fecha nacimiento:</strong>
@@ -59,7 +62,8 @@
           </div>
           <div class="col-md-3">
             <strong>Jornada:</strong>
-            <%= @student.jornada_id %>
+            <%des_Jornada=WorkingDay.find_by(:id=>@student.jornada_id)%>
+            <%=des_Jornada.descripcion%>
           </div>
           <div class="col-md-3">
             <strong>Acudiente:</strong>

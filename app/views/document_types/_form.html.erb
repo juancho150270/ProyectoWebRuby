@@ -26,7 +26,7 @@
         
         <label id="lbldescripcion">Descripción:</label>
         <input type="text" id="document_type_descripcion" name="document_type[descripcion]" 
-        class="form-control" placeholder="Ingrese descripción"
+        class="form-control" placeholder="Ingrese descripción" required="required"
         value="<%= @document_type != nil ? @document_type.descripcion : '' %>">
 
       </div>

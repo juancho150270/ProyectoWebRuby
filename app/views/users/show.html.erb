@@ -16,9 +16,7 @@
             <%= @user.login %>
           </div>
           <div class="col-md-3">
-            <strong>Perfil:</strong>
-            <!--<%= @user.perfil_id %>-->
-            
+            <strong>Perfil:</strong>            
             <%perfiluser=Profile.find_by(:id=>@user.perfil_id)%>
             <%= perfiluser.descripcion%>
 
@@ -42,7 +40,8 @@
           </div>
           <div class="col-md-3">
             <strong>Tipo identificación:</strong>
-            <%= @user.tipo_documento_id %>
+            <%des_tipo_documento_id=DocumentType.find_by(:id=>@user.tipo_documento_id)%>
+            <%=des_tipo_documento_id.descripcion%>
           </div>
           <div class="col-md-3">
             <strong>Identificación:</strong>

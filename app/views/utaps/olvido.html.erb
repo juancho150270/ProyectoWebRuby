@@ -1,26 +1,49 @@
 <% if @mensaje != nil %>
   <input type="text" id="txtMensaje" hidden="" value="<%= @mensaje %>" />
   <input type="text" id="txtTipo" hidden="" value="<%= @tipo %>" /> 
+
     <script>
         swal("Mensaje", 
         document.getElementById("txtMensaje").value, 
         document.getElementById("txtTipo").value);
     </script>
 <% end %>
-
-  <div class="container">
-    <div class="card card-login mx-auto mt-5">
-      <div class="card-header">Correo registrado</div>
-      <div class="card-body">
-        <%= form_tag(:controller => "utaps", :action => "recuperar_clave", :method => "post") do |f| %>	
-          <div class="form-group">
-            <label for="lblCorreo">Correo</label>
-            <input class="form-control" id="txtCorreo" name="txtCorreo" type="text" 
-            placeholder="Ingrese su direccion de correo registrado">
+<div class="masthead">
+  <div class="masthead-bg"></div>
+  <div class="container h-100">
+    <div class="row h-100">
+      <div class="col-12 my-auto">
+        <div class="masthead-content text-white py-5 py-md-0">
+        <h1 class="mb-3">Recuperar contraseña</h1>
+          <div class="container">
+            <div class="card card-login mx-auto mt-5">
+              <div class="card-header text-dark">Correo registrado</div>
+              <div class="card-body">
+                <%= form_tag(:controller => "utaps", :action => "recuperar_clave", :method => "post") do |f| %>
+                <div class="form-group">
+                  <label for="lblCorreo" class="text-dark">Correo</label>
+                  <input class="form-control" id="txtCorreo" name="txtCorreo" type="email" placeholder="Ingrese su direccion de correo registrado" required="required">
+                </div>
+                  <input type="submit" class="btn btn-primary btn-block" value="Aceptar"/>
+                <% end %>
+                <%= link_to 'Cancelar', {:controller=>:utaps,:action=>:login} %>
+              </div>
+            </div>
           </div>
-          
-          <input type="submit" class="btn btn-primary btn-block" value="Aceptar"/>      
-        <% end %>        
+        </div>
       </div>
     </div>
   </div>
+</div>
+<div class="social-icons">
+  <div class="masthead">
+    <div class="container h-100">
+      <div class="row h-100">
+
+      </div>
+    </div>
+	</div>
+  <ul class="list-unstyled text-center mb-0">
+    <img src="/img/Plantilla.png" class="rounded" alt="Cinque Terre">
+  </ul>
+</div>   

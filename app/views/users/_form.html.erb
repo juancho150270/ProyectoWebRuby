@@ -17,14 +17,14 @@
       <div class="col-md-3">
         <label id="lblId">Id:</label>
         <input type="number" id="user_id" name="user[id]" 
-        class="form-control" placeholder="Ingrese id"
-        value="<%= @user != nil ? @user.id : '' %>" ><!--readonly="readonly"-->
+        class="form-control" placeholder="id automatico" readonly="readonly"
+        value="<%= @user != nil ? @user.id : '' %>" >
       </div>
       
       <div class="col-md-3">        
         <label id="lbllogin">Login:</label>
         <input type="text" id="user_login" name="user[login]" 
-        class="form-control" placeholder="id Automatico" readonly="readonly"
+        class="form-control" placeholder="Ingrese login" required="required"
         value="<%= @user != nil ? @user.login : '' %>">
       </div>
 
@@ -42,7 +42,7 @@
       <div class="col-md-3">
         <label id="lblpassword">Password:</label>
         <input type="password" id="user_password" name="user[password]" 
-        class="form-control" placeholder="Ingrese password"
+        class="form-control" placeholder="Ingrese password" required="required"
         value="<%= @user != nil ? @user.password : '' %>">
       </div>
 
@@ -55,7 +55,7 @@
       <div class="col-md-3">
         <label id="lblprimer_nombre">Primer Nombre:</label>
         <input type="text" id="user_primer_nombre" name="user[primer_nombre]" 
-        class="form-control" placeholder="Primer Nombre"
+        class="form-control" placeholder="Primer Nombre" required="required"
         value="<%= @user != nil ? @user.primer_nombre : '' %>">        
       </div>
       
@@ -69,7 +69,7 @@
       <div class="col-md-3">
         <label id="lblprimer_apellido">Primer Apellido:</label>
         <input type="text" id="user_primer_apellido" name="user[primer_apellido]" 
-        class="form-control" placeholder="Primer Apellido"
+        class="form-control" placeholder="Primer Apellido" required="required"
         value="<%= @user != nil ? @user.primer_apellido : '' %>">
       </div>
 
@@ -89,14 +89,14 @@
       <div class="col-md-3">
         <label id="lbltelefono">Telefono:</label>
         <input type="text" id="user_telefono" name="user[telefono]" 
-        class="form-control" placeholder="Telefono"
+        class="form-control" placeholder="Telefono" required="required"
         value="<%= @user != nil ? @user.telefono : '' %>">        
       </div>
       
       <div class="col-md-3">        
         <label id="lblcorreo">Correo:</label>
         <input type="email" id="user_correo" name="user[correo]" 
-        class="form-control" placeholder="Direccion de correo"
+        class="form-control" placeholder="Direccion de correo" required="required"
         value="<%= @user != nil ? @user.correo : '' %>">
       </div>
 
@@ -109,9 +109,12 @@
 
       <div class="col-md-3">
         <label id="lbltipo_documento_id">Tipo documento:</label>
-        <input type="text" id="user_tipo_documento_id" name="user[tipo_documento_id]" 
-        class="form-control" placeholder="Tipo documento"
-        value="<%= @user != nil ? @user.tipo_documento_id : '' %>">
+        <%@des_tipo_documento = DocumentType.all%>
+        <select id="user_tipo_documento_id" name="user[tipo_documento_id]" class="form-control">
+          <% @des_tipo_documento.each do |item|%>
+            <option value="<%= item.id %>" <%= @user.tipo_documento_id == item.id ? 'selected' : '' %> ><%= item.descripcion %></option>
+          <% end %>
+        </select>
       </div>
 
     </div>
@@ -123,7 +126,7 @@
       <div class="col-md-3">
         <label id="lblcedula">Numero de identificación:</label>
         <input type="number" id="user_cedula" name="user[cedula]" 
-        class="form-control" placeholder="Numero de identificación"
+        class="form-control" placeholder="Numero de identificación" required="required"
         value="<%= @user != nil ? @user.cedula : '' %>">        
       </div>
       
