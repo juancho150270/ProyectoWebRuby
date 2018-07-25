@@ -11,10 +11,10 @@ class UtapsController < ApplicationController
     def recuperar_clave
         if User.exists?(:correo=>params[:txtCorreo])
             usuario=User.find_by(:correo=>params[:txtCorreo])
-            @contrasena_recuperada=usuario.password
+            @clave_recuperada=usuario.password
             @mensaje = 'Por favor revise su cuenta de correo'
             @tipo = 'success'
-            NotifyMailer.send_mail(params[:txtCorreo],'Recuperacion de contraseña',@contrasena_recuperada, @usuario_creado).deliver
+            NotifyMailer.send_mail_clave_recuperada(params[:txtCorreo],'Recuperacion de contraseña',@clave_recuperada).deliver
             render "login2"
         else
             @mensaje = 'La direccion de correo no existe'

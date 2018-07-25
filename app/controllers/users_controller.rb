@@ -33,8 +33,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        @usuario_creado='Ok'
-        NotifyMailer.send_mail(@user.correo,'Usuario creado',@contrasena_recuperada, @usuario_creado).deliver
+        @usuario_creado='Usuario: '+@user.login+' Contraseña: '+@user.password
+        NotifyMailer.send_mail_usuario_creado(@user.correo,'Usuario creado',@usuario_creado).deliver
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else

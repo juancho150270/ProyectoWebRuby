@@ -1,11 +1,5 @@
-<% if @clave_recuperada != nil %>
-  <h1>
+  <h2>
 Se ha realizado un proceso de recuperacion de contraseña, si ud no realizo el proceso por favor eliminar este correo.
 <br>Contraseña: <%= @clave_recuperada %>
-</h1>
-<% end %>
-<% if @tmp_usuario.eql? 'UsuarioCreado' %>
-  <h1>
-Se ha creado la cuenta correctamente
-</h1>
-<% end %>
+<br>Acceder a <a href="http://localhost:3000/observador">Observador Estudiantil</a>
+</h2>

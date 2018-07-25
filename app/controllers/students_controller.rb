@@ -70,6 +70,7 @@ class StudentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_params
-      params.require(:student).permit(:id, :primer_nombre, :segundo_nombre, :primer_apellido, :segundo_apellido, :fecha_nacimiento, :direccion, :genero_id, :grado_id, :fecha_creacion, :imagen, :jornada_id, :acudiente_id, :numero_identificacion, :tipo_documentacion_id)
+      id = Student.maximum('id') + 2
+      params.require(:student).permit(id, :primer_nombre, :segundo_nombre, :primer_apellido, :segundo_apellido, :fecha_nacimiento, :direccion, :genero_id, :grado_id, :fecha_creacion, :imagen, :jornada_id, :acudiente_id, :numero_identificacion, :tipo_documentacion_id)
     end
 end

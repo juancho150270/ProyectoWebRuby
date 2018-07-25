@@ -70,6 +70,7 @@ class WorkingDaysController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def working_day_params
-      params.require(:working_day).permit(:id, :descripcion, :fecha_creacion)
+      id = WorkingDay.maximum('id') + 2
+      params.require(:working_day).permit(id, :descripcion, :fecha_creacion)
     end
 end

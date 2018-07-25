@@ -70,6 +70,7 @@ class ObserverStatesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def observer_state_params
-      params.require(:observer_state).permit(:id, :descripcion, :fecha_creacion)
+      id = ObserverState.maximum('id') + 2
+      params.require(:observer_state).permit(id, :descripcion, :fecha_creacion)
     end
 end
