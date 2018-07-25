@@ -70,7 +70,10 @@ class DocumentTypesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def document_type_params
-      id = DocumentType.maximum('id') + 2
-      params.require(:document_type).permit(id, :descripcion, :fecha_creacion)
+      
+      #id = DocumentType.maximum('id') + 1
+      t = Time.now
+      t.strftime("%Y/%m/%d")
+      params.require(:document_type).permit((DocumentType.maximum('id') + 1), :descripcion, :fecha_creacion)
     end
 end

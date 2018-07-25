@@ -70,7 +70,7 @@ class ObserverDetailsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def observer_detail_params
-      id = ObserverDetail.maximum('id') + 2
-      params.require(:observer_detail).permit(id, :fecha_creacion, :fecha_modificacion, :tipo_seguimiento, :fecha_sucesos, :observacion, :compromisos, :obs_encabezado_id)
+      #id = ObserverDetail.maximum('id') + 1
+      params.require(:observer_detail).permit((ObserverDetail.maximum('id') + 1), :fecha_creacion, :fecha_modificacion, :tipo_seguimiento, :fecha_sucesos, :observacion, :compromisos, :obs_encabezado_id)
     end
 end
