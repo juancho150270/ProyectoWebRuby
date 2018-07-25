@@ -10,18 +10,18 @@
 
   <div class="container">
     <div class="card card-login mx-auto mt-5">
-      <div class="card-header">Ingreso 2</div>
+      <div class="card-header">Ingreso</div>
       <div class="card-body">
         <%= form_tag(:controller => "utaps", :action => "ingresar", :method => "post") do |f| %>	
           <div class="form-group">
-            <label for="lblUser">Usuario 2</label>
+            <label for="lblUser">Usuario</label>
             <input class="form-control" id="txtUser" name="txtUser" type="text" 
             placeholder="Ingrese usuario">
           </div>
           <div class="form-group">
-            <label for="lblPassword">Clave 2</label>
+            <label for="lblPassword">Contraseña</label>
             <input class="form-control" id="txtPassword" name="txtPassword" type="password" 
-            placeholder="Ingrese clave">
+            placeholder="Ingrese Contraseña">
           </div>
           <input type="submit" class="btn btn-primary btn-block" value="Aceptar"/>
           <%= link_to 'Olvido su clave?', {:controller=>:utaps,:action=>:olvido_clave} %>        

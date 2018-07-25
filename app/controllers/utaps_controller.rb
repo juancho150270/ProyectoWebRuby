@@ -1,6 +1,6 @@
 class UtapsController < ApplicationController
     def index
-        render "index"
+        render "index", layout:"home_principal"
     end
     def login
         render "login2"
@@ -15,7 +15,7 @@ class UtapsController < ApplicationController
             @mensaje = 'Por favor revise su cuenta de correo'
             @tipo = 'success'
             NotifyMailer.send_mail(params[:txtCorreo],'Recuperacion de contraseña',@contrasena_recuperada, @usuario_creado).deliver
-            render "olvido"
+            render "login2"
         else
             @mensaje = 'La direccion de correo no existe'
             @tipo = 'warning'

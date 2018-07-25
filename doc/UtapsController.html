@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class UtapsController - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="ApplicationController.html">ApplicationController</a>
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-index">#index</a>
+    
+    <li ><a href="#method-i-ingresar">#ingresar</a>
+    
+    <li ><a href="#method-i-login">#login</a>
+    
+    <li ><a href="#method-i-olvido_clave">#olvido_clave</a>
+    
+    <li ><a href="#method-i-recuperar_clave">#recuperar_clave</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-UtapsController">
+  <h1 id="class-UtapsController" class="class">
+    class UtapsController
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-index" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">index</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="index-source">
+            <pre><span class="ruby-comment"># File app/controllers/utaps_controller.rb, line 2</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">index</span>
+    <span class="ruby-identifier">render</span> <span class="ruby-string">&quot;index&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-ingresar" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ingresar</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="ingresar-source">
+            <pre><span class="ruby-comment"># File app/controllers/utaps_controller.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">ingresar</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-constant">User</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-value">:login</span><span class="ruby-operator">=&gt;</span><span class="ruby-identifier">params</span>[<span class="ruby-value">:txtUser</span>],<span class="ruby-value">:password</span><span class="ruby-operator">=&gt;</span><span class="ruby-identifier">params</span>[<span class="ruby-value">:txtPassword</span>])
+        <span class="ruby-ivar">@mensaje</span> = <span class="ruby-string">&#39;Bienvenido&#39;</span>
+        <span class="ruby-ivar">@tipo</span> = <span class="ruby-string">&#39;success&#39;</span>
+        <span class="ruby-ivar">@login_usuario</span>=<span class="ruby-identifier">params</span>[<span class="ruby-value">:txtUser</span>]
+        <span class="ruby-identifier">perfiluser</span>=<span class="ruby-constant">User</span>.<span class="ruby-identifier">find_by</span>(<span class="ruby-value">:login</span><span class="ruby-operator">=&gt;</span><span class="ruby-identifier">params</span>[<span class="ruby-value">:txtUser</span>])
+        <span class="ruby-ivar">@perfil_usuario</span>=<span class="ruby-identifier">perfiluser</span>.<span class="ruby-identifier">perfil_id</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@perfil_usuario</span><span class="ruby-operator">==</span><span class="ruby-value">2</span>
+            <span class="ruby-identifier">render</span> <span class="ruby-string">&quot;home&quot;</span>, <span class="ruby-value">layout:</span><span class="ruby-string">&quot;home&quot;</span>
+        <span class="ruby-keyword">else</span>
+            <span class="ruby-identifier">render</span> <span class="ruby-string">&quot;home&quot;</span>, <span class="ruby-value">layout:</span><span class="ruby-string">&quot;home_user&quot;</span>
+            
+        <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">else</span>
+        <span class="ruby-ivar">@mensaje</span> = <span class="ruby-string">&#39;Usuario o clave incorrecto&#39;</span>
+        <span class="ruby-ivar">@tipo</span> = <span class="ruby-string">&#39;warning&#39;</span>
+        <span class="ruby-identifier">render</span> <span class="ruby-string">&quot;login&quot;</span>
+    <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-login" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">login</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="login-source">
+            <pre><span class="ruby-comment"># File app/controllers/utaps_controller.rb, line 5</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">login</span>
+    <span class="ruby-identifier">render</span> <span class="ruby-string">&quot;login2&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-olvido_clave" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">olvido_clave</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="olvido_clave-source">
+            <pre><span class="ruby-comment"># File app/controllers/utaps_controller.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">olvido_clave</span>
+    <span class="ruby-identifier">render</span> <span class="ruby-string">&quot;olvido&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-recuperar_clave" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">recuperar_clave</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="recuperar_clave-source">
+            <pre><span class="ruby-comment"># File app/controllers/utaps_controller.rb, line 11</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">recuperar_clave</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-constant">User</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-value">:correo</span><span class="ruby-operator">=&gt;</span><span class="ruby-identifier">params</span>[<span class="ruby-value">:txtCorreo</span>])
+        <span class="ruby-identifier">usuario</span>=<span class="ruby-constant">User</span>.<span class="ruby-identifier">find_by</span>(<span class="ruby-value">:correo</span><span class="ruby-operator">=&gt;</span><span class="ruby-identifier">params</span>[<span class="ruby-value">:txtCorreo</span>])
+        <span class="ruby-ivar">@contrasena_recuperada</span>=<span class="ruby-identifier">usuario</span>.<span class="ruby-identifier">password</span>
+        <span class="ruby-ivar">@mensaje</span> = <span class="ruby-string">&#39;Por favor revise su cuenta de correo&#39;</span>
+        <span class="ruby-ivar">@tipo</span> = <span class="ruby-string">&#39;success&#39;</span>
+        <span class="ruby-constant">NotifyMailer</span>.<span class="ruby-identifier">send_mail</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:txtCorreo</span>],<span class="ruby-string">&#39;Recuperacion de contraseña&#39;</span>,<span class="ruby-ivar">@contrasena_recuperada</span>, <span class="ruby-ivar">@usuario_creado</span>).<span class="ruby-identifier">deliver</span>
+        <span class="ruby-identifier">render</span> <span class="ruby-string">&quot;olvido&quot;</span>
+    <span class="ruby-keyword">else</span>
+        <span class="ruby-ivar">@mensaje</span> = <span class="ruby-string">&#39;La direccion de correo no existe&#39;</span>
+        <span class="ruby-ivar">@tipo</span> = <span class="ruby-string">&#39;warning&#39;</span>
+        <span class="ruby-identifier">render</span> <span class="ruby-string">&quot;login2&quot;</span>
+    <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.0.4.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

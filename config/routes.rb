@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   resources :genders
   resources :attendants
   resources :students
-  get "utap" => "utaps#index"
+  get "observador" => "utaps#index"
+  post "utaps/login"
   get "utap" => "utaps#login"
   post "utaps/ingresar"
   get "/utaps/cerrarsesion" => "utaps#login"
