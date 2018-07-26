@@ -72,9 +72,16 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      perfil=Profile.last
-      idd=perfil.id+1
-      #idd = Profile.maximum('id') + 1
+      #perfil=Profile.last
+      #idd=perfil.id+1
+      if (Profile.maximum('id')!=nil)
+        idd=Profile.maximum('id')+1
+      else
+        idd=0
+      end
+
+      #idd = (Profile.maximum('id') !=nil ? Profile.maximum('id') : 0 )+1
+      
       params.require(:profile).permit(idd, :descripcion, :fecha_creacion)
     end
 end
