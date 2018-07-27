@@ -70,7 +70,6 @@ class ObserverHeadsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def observer_head_params
-      #id = ObserverHead.maximum('id') + 1
-      params.require(:observer_head).permit((ObserverHead.maximum('id') + 1), :fecha_creacion, :estudiante_id, :usuario_id, :titulo, :estado)
+      params.require(:observer_head).permit(:id, :fecha_creacion, :estudiante_id, :usuario_id, :titulo, :estado)
     end
 end
