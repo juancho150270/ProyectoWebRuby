@@ -1,34 +1,58 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Id:</strong>
-  <%= @observer_head.id %>
-</p>
+<div class="container">
+  <div class="card mx-auto mt-5">
+    <div class="card-header">Observador</div>
+    <div class="card-body">
 
-<p>
-  <strong>Fecha creacion:</strong>
-  <%= @observer_head.fecha_creacion %>
-</p>
+       <div class="form-group">
+        <div class="form-row">
+          <div class="col-md-4">
+            <strong>Id:</strong>
+            <%= @observer_head.id %>
+          </div>
+          <div class="col-md-4">
+            <strong>Estudiante:</strong>
+            <%des_Estudiante=Student.find_by(:id=>@observer_head.estudiante_id)%>
+            <%=des_Estudiante.id%>
+          </div>
+          <div class="col-md-4">
+            <strong>Usuario:</strong>
+            <%des_Usuario=User.find_by(:id=>@observer_head.usuario_id)%>
+            <%=des_Usuario.login%>
+          </div>
+        </div>
+      </div>
 
-<p>
-  <strong>Estudiante:</strong>
-  <%= @observer_head.estudiante_id %>
-</p>
+      <div class="form-group">
+        <div class="form-row">
+          <div class="col-md-3">
+            <strong>Titulo:</strong>
+            <%= @observer_head.titulo %>
+          </div>
+          <div class="col-md-3">
+            <strong>Estado:</strong>
+            <%des_Estado=ObserverState.find_by(:id=>@observer_head.estado)%>
+            <%=des_Estado.descripcion%>
+          </div>
+          <div class="col-md-3">
+            <strong>Fecha creacion:</strong>
+            <%= @observer_head.fecha_creacion %>
+          </div>
+        </div>
+      </div>  
 
-<p>
-  <strong>Usuario:</strong>
-  <%= @observer_head.usuario_id %>
-</p>
 
-<p>
-  <strong>Titulo:</strong>
-  <%= @observer_head.titulo %>
-</p>
+      <div class="form-group">
+        <div class="form-row">
+            <div class="col-md-6">
+                <%= link_to 'Editar', edit_observer_head_path(@observer_head),{ class: "btn btn-info btn-sm" } %> 
+                <%= link_to 'Volver', observer_heads_path,{ class: "btn btn-info btn-sm" } %>
+            </div>
+        </div> 
+      </div>
+    </div>
+  </div> 
+</div>
 
-<p>
-  <strong>Estado:</strong>
-  <%= @observer_head.estado %>
-</p>
 
-<%= link_to 'Edit', edit_observer_head_path(@observer_head) %> |
-<%= link_to 'Back', observer_heads_path %>

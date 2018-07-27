@@ -1,6 +1,6 @@
 class ObserverDetailsController < ApplicationController
   before_action :set_observer_detail, only: [:show, :edit, :update, :destroy]
-  layout 'home_user'
+  layout 'home'
 
   # GET /observer_details
   # GET /observer_details.json
