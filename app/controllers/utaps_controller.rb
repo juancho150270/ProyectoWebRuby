@@ -41,4 +41,70 @@ class UtapsController < ApplicationController
             render "index", layout:"home_principal"
         end
     end
+
+    #Ejercicio Final
+    def product
+        arrayPrd = [[1, 'Arroz', 1000, 7],[2, 'Azucar', 2000, 5],[3, 'Tomate', 1500, 9]]
+        session[:productos] = arrayPrd
+        session[:carrito] = []
+        render "product"#, layout:"home_principal"
+    end
+
+    def add_product
+        #byebug
+        i = 0
+        l = 0
+        x = false
+        arrayPrd = session[:productos]
+        arrayCar = session[:carrito]
+        arrayPrd.each do |item|
+            if item[0].eql?(params[:id].to_i) and item[3] != 0
+                arrayPrd[i][3] = item[3]-1
+                if arrayCar.length.eql?(0)
+                    arrayCar.push [item[0],item[1],item[2],1]
+                else
+                    arrayCar.each do |car|
+                        if car[0].eql?(params[:id].to_i)
+                            arrayCar[l][3] = car[3]+1
+                            #arrayCar[l][2] = item[2]*car[3]
+                            x = true
+                        end
+                        l=l+1
+                    end
+                    l=0
+                    if x.eql?(false)
+                        arrayCar.push [item[0],item[1],item[2],1]
+                    end
+                end
+            end
+            i = i+1
+        end
+        session[:productos] = arrayPrd
+        session[:carrito] = arrayCar
+        render "product"
+    end
+
+    def delete_product
+        i = 0
+        arrayPrd = session[:productos]
+        arrayCar = session[:carrito]
+        arrayCar.each do |item|
+            if item[0].eql?(params[:id].to_i) and item[3] != 1
+                arrayCar[i][3] = item[3]-1
+            elsif item[0].eql?(params[:id].to_i) and item[3].eql?(1)
+                arrayCar.delete(item)
+            end
+            i = i+1
+        end
+        i=0
+        arrayPrd.each do |item|
+            if item[0].eql?(params[:id].to_i)
+                arrayPrd[i][3] = item[3]+1
+            end
+            i = i+1
+        end
+        session[:productos] = arrayPrd
+        session[:carrito] = arrayCar
+        render "product"
+    end
 end

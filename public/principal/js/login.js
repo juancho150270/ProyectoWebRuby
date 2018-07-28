@@ -8,6 +8,7 @@ $(function() {
     button.mouseup(function(login) {
         box.toggle();
         button.toggleClass('active');
+        button.hide();
     });
     form.mouseup(function() { 
         return false;
@@ -16,6 +17,7 @@ $(function() {
         if(!($(login.target).parent('#loginButton').length > 0)) {
             button.removeClass('active');
             box.hide();
+            button.show();
         }
     });
 });

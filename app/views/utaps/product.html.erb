@@ -1,0 +1,47 @@
+<% arrayPrd = session[:productos] %>
+<table class="table table-bordered" style="width:100%">
+    <tr>
+        <td>Id</td>
+        <td>Descripcion</td>
+        <td>Valor</td>
+        <td>Cantidad</td>        
+        <td>Opciones</td>							
+    </tr>
+    
+    <% arrayPrd.each do |item|%>
+    <tr>
+        <td><%= item[0] %></td>
+        <td><%= item[1] %></td>
+        <td><%= item[2] %></td>
+        <td><%= item[3] %></td>        
+        <td>
+        <%= link_to 'Agregar', {:controller => :utaps, :action => :add_product, :id => item[0] }, { class: "btn btn-success btn-sm" } %>        
+        </td>
+    </tr>
+    <% end %>
+</table>
+
+<table class="table table-bordered" style="width:100%">
+    <tr>
+        <td>Id</td>
+        <td>Descripcion</td>
+        <td>Valor</td>
+        <td>Cantidad</td>        
+        <td>Opciones</td>							
+    </tr>
+    <% session[:carrito].each do |item| %>
+    <tr>
+        <td><%= item[0] %></td>
+        <td><%= item[1] %></td>
+        <td><%= item[2] %></td>
+        <td><%= item[3] %></td>          
+        <td>
+        <%= link_to 'Eliminar', {:controller => :utaps, :action => :delete_product,:id => item[0] }, { class: "btn btn-danger btn-sm" } %>   
+        
+        </td>
+    </tr>
+    <% end %>
+</table>
+</br>
+</br>
+<%= link_to 'Restart', {:controller => :utaps, :action => :product }, { class: "btn btn-success btn-sm" } %>
