@@ -134,7 +134,7 @@
           <div class="method-source-code" id="index-source">
             <pre><span class="ruby-comment"># File app/controllers/utaps_controller.rb, line 2</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">index</span>
-    <span class="ruby-identifier">render</span> <span class="ruby-string">&quot;index&quot;</span>
+    <span class="ruby-identifier">render</span> <span class="ruby-string">&quot;index&quot;</span>, <span class="ruby-value">layout:</span><span class="ruby-string">&quot;home_principal&quot;</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -181,8 +181,8 @@
         <span class="ruby-keyword">end</span>
     <span class="ruby-keyword">else</span>
         <span class="ruby-ivar">@mensaje</span> = <span class="ruby-string">&#39;Usuario o clave incorrecto&#39;</span>
-        <span class="ruby-ivar">@tipo</span> = <span class="ruby-string">&#39;warning&#39;</span>
-        <span class="ruby-identifier">render</span> <span class="ruby-string">&quot;login&quot;</span>
+        <span class="ruby-ivar">@tipo</span> = <span class="ruby-string">&#39;warning&#39;</span>            
+        <span class="ruby-identifier">render</span> <span class="ruby-string">&quot;login2&quot;</span>, <span class="ruby-value">layout:</span><span class="ruby-string">&quot;home_principal&quot;</span>
     <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
@@ -216,7 +216,7 @@
           <div class="method-source-code" id="login-source">
             <pre><span class="ruby-comment"># File app/controllers/utaps_controller.rb, line 5</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">login</span>
-    <span class="ruby-identifier">render</span> <span class="ruby-string">&quot;login2&quot;</span>
+    <span class="ruby-identifier">render</span> <span class="ruby-string">&quot;login2&quot;</span>, <span class="ruby-value">layout:</span><span class="ruby-string">&quot;home_principal&quot;</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -249,7 +249,7 @@
           <div class="method-source-code" id="olvido_clave-source">
             <pre><span class="ruby-comment"># File app/controllers/utaps_controller.rb, line 8</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">olvido_clave</span>
-    <span class="ruby-identifier">render</span> <span class="ruby-string">&quot;olvido&quot;</span>
+    <span class="ruby-identifier">render</span> <span class="ruby-string">&quot;olvido&quot;</span>, <span class="ruby-value">layout:</span><span class="ruby-string">&quot;home_principal&quot;</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -284,15 +284,15 @@
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">recuperar_clave</span>
     <span class="ruby-keyword">if</span> <span class="ruby-constant">User</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-value">:correo</span><span class="ruby-operator">=&gt;</span><span class="ruby-identifier">params</span>[<span class="ruby-value">:txtCorreo</span>])
         <span class="ruby-identifier">usuario</span>=<span class="ruby-constant">User</span>.<span class="ruby-identifier">find_by</span>(<span class="ruby-value">:correo</span><span class="ruby-operator">=&gt;</span><span class="ruby-identifier">params</span>[<span class="ruby-value">:txtCorreo</span>])
-        <span class="ruby-ivar">@contrasena_recuperada</span>=<span class="ruby-identifier">usuario</span>.<span class="ruby-identifier">password</span>
-        <span class="ruby-ivar">@mensaje</span> = <span class="ruby-string">&#39;Por favor revise su cuenta de correo&#39;</span>
+        <span class="ruby-ivar">@clave_recuperada</span>=<span class="ruby-identifier">usuario</span>.<span class="ruby-identifier">password</span>
+        <span class="ruby-ivar">@mensaje</span> = <span class="ruby-string">&#39;Se envio la contraseña a su cuenta de correo&#39;</span>
         <span class="ruby-ivar">@tipo</span> = <span class="ruby-string">&#39;success&#39;</span>
-        <span class="ruby-constant">NotifyMailer</span>.<span class="ruby-identifier">send_mail</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:txtCorreo</span>],<span class="ruby-string">&#39;Recuperacion de contraseña&#39;</span>,<span class="ruby-ivar">@contrasena_recuperada</span>, <span class="ruby-ivar">@usuario_creado</span>).<span class="ruby-identifier">deliver</span>
-        <span class="ruby-identifier">render</span> <span class="ruby-string">&quot;olvido&quot;</span>
+        <span class="ruby-constant">NotifyMailer</span>.<span class="ruby-identifier">send_mail_clave_recuperada</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:txtCorreo</span>],<span class="ruby-string">&#39;Recuperacion de contraseña&#39;</span>,<span class="ruby-ivar">@clave_recuperada</span>).<span class="ruby-identifier">deliver</span>
+        <span class="ruby-identifier">render</span> <span class="ruby-string">&quot;login2&quot;</span>, <span class="ruby-value">layout:</span><span class="ruby-string">&quot;home_principal&quot;</span>
     <span class="ruby-keyword">else</span>
         <span class="ruby-ivar">@mensaje</span> = <span class="ruby-string">&#39;La direccion de correo no existe&#39;</span>
         <span class="ruby-ivar">@tipo</span> = <span class="ruby-string">&#39;warning&#39;</span>
-        <span class="ruby-identifier">render</span> <span class="ruby-string">&quot;login2&quot;</span>
+        <span class="ruby-identifier">render</span> <span class="ruby-string">&quot;login2&quot;</span>, <span class="ruby-value">layout:</span><span class="ruby-string">&quot;home_principal&quot;</span>
     <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
