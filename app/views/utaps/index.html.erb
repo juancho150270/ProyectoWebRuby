@@ -1,3 +1,13 @@
+<% if @mensaje != nil %>
+  <input type="text" id="txtMensaje" hidden="" value="<%= @mensaje %>" />
+  <input type="text" id="txtTipo" hidden="" value="<%= @tipo %>" /> 
+
+    <script>
+        swal("Mensaje", 
+        document.getElementById("txtMensaje").value, 
+        document.getElementById("txtTipo").value);
+    </script>
+<% end %>
 	
     <div class="masthead">
       <div class="masthead-bg"></div>
@@ -6,15 +16,41 @@
           <div class="col-12 my-auto">
             <div class="masthead-content text-white py-5 py-md-0">
               <h1 class="mb-3">Observador Estudiantil</h1>
-              <p class="mb-5">
-				</p>
               <div class="input-group input-group-newsletter">
 				<!--<input type="registrar" class="form-control" placeholder="Enter email..." aria-label="Enter email..." aria-describedby="basic-addon">-->
-                <div class="input-group-append">
+                <!--div class="input-group-append">
                 <%= form_tag(:controller => "utaps", :action => "login", :method => "post") do |f| %>	
                   <input type="submit" class="btn btn-primary btn-block" value="Ingresar"/>   
                   <%end%>
+                </div-->
+
+                                          <!-- Login Starts Here -->
+            <div id="loginContainer">
+                <a href="#" id="loginButton" class="card-header text-dark"><span>Ingresar</span></a>
+                <div style="clear:both"></div>
+                <div id="loginBox">                
+                    <div id="loginForm">
+                        <fieldset id="body">
+                          <%= form_tag(:controller => "utaps", :action => "ingresar", :method => "post") do |f| %>	
+                          <div class="form-group">
+                          <label for="lblUser" class="text-dark">Usuario</label>
+                          <input class="form-control" id="txtUser" name="txtUser" type="text" 
+                          placeholder="Ingrese usuario" required="required">
+                          </div>
+                          <div class="form-group">
+                          <label for="lblPassword" class="text-dark">Contraseña</label>
+                          <input class="form-control" id="txtPassword" name="txtPassword" type="password" 
+                          placeholder="Ingrese Contraseña" required="required">
+                          </div>
+                          <input type="submit" class="btn btn-primary btn-block" value="Aceptar"/>        
+                          <% end %> 
+                        </fieldset>
+                        <span><%= link_to 'Olvido su clave?', {:controller=>:utaps,:action=>:olvido_clave} %></span>
+                    </div>
                 </div>
+            </div>
+            <!-- Login Ends Here -->
+
               </div>
             </div>
           </div>
@@ -23,14 +59,13 @@
     </div>
 	
     <div class="social-icons">
-	
+
 	<div class="masthead">
-      
       <div class="container h-100">
         <div class="row h-100">
-	
+
 		<div class="col-12 my-auto">
-            
+
               <h3 class="mb-2">Es una aplicación web que permite evidenciar y controlar los procesos de los estudiantes, esto con el fin de mejorar la ruta de atención integral para la Convivencia Escolar (Ley 1620 del 2013).
               </h3>
 		<br>
@@ -45,7 +80,7 @@
 	 
       <ul class="list-unstyled text-center mb-0">
 		<!--<img src="img/0001.jpg">-->
-		<img src="img/Plantilla.png" class="rounded" alt="Cinque Terre">
+		<img src="/img/Plantilla.png" class="rounded" alt="Cinque Terre">
         <!--<li class="list-unstyled-item">
           <a href="#">
             <i class="fa fa-twitter"></i>
