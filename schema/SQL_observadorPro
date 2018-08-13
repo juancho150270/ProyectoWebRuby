@@ -1,0 +1,16 @@
+CREATE SEQUENCE "Seguridad"."tbTipo_Parentesco_id_seq";
+ALTER TABLE "Seguridad"."tbTipo_Parentesco" ALTER COLUMN id SET DEFAULT NEXTVAL('"Seguridad"."tbTipo_Parentesco_id_seq"'::regclass);
+
+--------
+ALTER TABLE "Seguridad"."tbEstudiante" ALTER COLUMN fecha_creacion SET DEFAULT now();
+------------
+ALTER TABLE "Seguridad"."tbPerfil" ALTER COLUMN descripcion TYPE character varying(50);
+--------------
+CREATE OR REPLACE FUNCTION fun_actualiza_fecha() RETURNS TRIGGER AS $$
+    begin
+          NEW.fecha_modificacion := current_date;
+		  return new;
+    end;
+ $$ LANGUAGE plpgsql;
+ CREATE TRIGGER trg_actualiza_fecha BEFORE UPDATE ON "Seguridad"."tbObs_Detalle"
+ FOR EACH ROW EXECUTE PROCEDURE fun_actualiza_fecha();

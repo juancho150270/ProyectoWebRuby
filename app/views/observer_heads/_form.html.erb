@@ -13,60 +13,68 @@
 
   <div class="form-group">
     <div class="form-row">
-      <div class="col-md-3">
+
+      <div class="col-md-4">
         <label id="lblId">Id:</label>
         <input type="number" id="observer_head_id" name="observer_head[id]" 
         class="form-control" placeholder="id Automatico" readonly="readonly"
         value="<%= @observer_head != nil ? @observer_head.id : '' %>">        
       </div>
-    </div>
-
-    <div class="form-row">
-      <div class="col-md-3">
-        <label id="lblFecha_Creacion">Fecha_Creacion:</label>
-        <input type="text" id="observer_head_fecha_creacion" name="observer_head[fecha_creacion]" 
-        class="form-control" placeholder="Ingrese Fecha"
-        value="<%= @observer_head != nil ? @observer_head.fecha_creacion : '' %>">        
+      
+      <div class="col-md-4">        
+        <label id="lblestudiante_id">Estudiante:</label>
+        <%@des_Estudiante = Student.all%>
+        <select id="observer_head_estudiante_id" name="observer_head[estudiante_id]" class="form-control">
+          <% @des_Estudiante.each do |item|%>
+            <option value="<%= item.id %>" <%= @observer_head.estudiante_id == item.id ? 'selected' : '' %> ><%= item.id %></option>
+          <% end %>
+        </select>
       </div>
-    </div>
 
-    <div class="form-row">
-      <div class="col-md-3">
-        <label id="lblEstudiante_id">Estudiante_id:</label>
-        <input type="number" id="observer_head_estudiante_id" name="observer_head[estudiante_id]" 
-        class="form-control" placeholder="Ingrese Id Estudiante" required="required"
-        value="<%= @observer_head != nil ? @observer_head.estudiante_id : '' %>">        
+      <div class="col-md-4">        
+        <label id="lblusuario_id">Usuario:</label>
+        <%@des_Usuario = User.all%>
+        <select id="observer_head_usuario_id" name="observer_head[usuario_id]" class="form-control">
+          <% @des_Usuario.each do |item|%>
+            <option value="<%= item.id %>" <%= @observer_head.usuario_id == item.id ? 'selected' : '' %> ><%= item.login %></option>
+          <% end %>
+        </select>
       </div>
-    </div>
 
-    <div class="form-row">
-      <div class="col-md-3">
-        <label id="lblUsuario_id">Usuario_id:</label>
-        <input type="number" id="observer_head_usuario_id" name="observer_head[usuario_id]" 
-        class="form-control" placeholder="Ingrese Id Usuario" required="required"
-        value="<%= @observer_head != nil ? @observer_head.usuario_id : '' %>">        
-      </div>
+      
     </div>
+  </div>
 
+  <div class="form-group">
     <div class="form-row">
-      <div class="col-md-3">
-        <label id="lblTitulo">Titulo:</label>
+
+      <div class="col-md-4">
+        <label id="lbltitulo">Titulo:</label>
         <input type="text" id="observer_head_titulo" name="observer_head[titulo]" 
-        class="form-control" placeholder="Ingrese titulo" required="required"
+        class="form-control" placeholder="Titulo" required="required"
         value="<%= @observer_head != nil ? @observer_head.titulo : '' %>">        
       </div>
-    </div>
-
-    <div class="form-row">
-      <div class="col-md-3">
-        <label id="lblEstado">estado:</label>
-        <input type="number" id="observer_head_estado" name="observer_head[estado]" 
-        class="form-control" placeholder="Ingrese Estado"
-        value="<%= @observer_head != nil ? @observer_head.estado : '' %>">        
+      
+      <div class="col-md-4">        
+        <label id="lblestado">Estado:</label>
+        <%@des_Estado = ObserverState.all%>
+        <select id="observer_head_estado" name="observer_head[estado]" class="form-control">
+          <% @des_Estado.each do |item|%>
+            <option value="<%= item.id %>" <%= @observer_head.estado == item.id ? 'selected' : '' %> ><%= item.descripcion %></option>
+          <% end %>
+        </select>
       </div>
-    </div>
 
+      <div class="col-md-4">
+        <label id="lblfecha_creacion">Fecha creacion:</label>
+        <input type="text" id="observer_head_fecha_creacion" name="observer_head[fecha_creacion]" 
+          class="form-control" placeholder="Fecha Automatico" readonly="readonly"
+          value="<%= @observer_head != nil ? @observer_head.fecha_creacion : '' %>"> 
+      </div>
+
+    </div>
   </div>
+
 
   <div class="form-group">
     <div class="form-row">
@@ -77,10 +85,6 @@
 
       </div>
     </div>
-  </div>  
-
-  <div class="actions">
-    <%= form.submit %>
   </div>
 
-<% end %>
+<% end %>  
