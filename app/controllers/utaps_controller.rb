@@ -38,7 +38,7 @@ class UtapsController < ApplicationController
         else
             @mensaje = 'Usuario o clave incorrecto'
             @tipo = 'warning'            
-            render "index", layout:"home_principal"
+            render "login2", layout:"home_principal"
         end
     end
 

@@ -1,16 +1,5 @@
-<div class="container">
-  <div class="card mx-auto mt-5">
-    <div class="card-header">Nuevo usuario</div>
-    <div class="card-body">
-        <%= render 'form', observer_detail: @observer_detail %>
-          <div class="form-group">
-            <div class="form-row">
-                <div class="col-md-6">
-                    <%= link_to 'Volver', observer_details_path,{ class: "btn btn-info btn-sm" } %>
-                </div>
-            </div>
-        </div>
-   </div>
-  </div>
-</div>
+<h1>New Observer Detail</h1>
 
+<%= render 'form', observer_detail: @observer_detail %>
+
+<%= link_to 'Back', observer_details_path %>

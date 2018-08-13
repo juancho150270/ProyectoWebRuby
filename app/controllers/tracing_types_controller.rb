@@ -70,6 +70,7 @@ class TracingTypesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tracing_type_params
-      params.require(:tracing_type).permit(:id, :descripcion, :fecha_creacion)
+      #id = TracingType.maximum('id') + 1
+      params.require(:tracing_type).permit((TracingType.maximum('id') + 1), :descripcion, :fecha_creacion)
     end
 end

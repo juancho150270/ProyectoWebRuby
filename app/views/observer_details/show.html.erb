@@ -1,64 +1,44 @@
 <p id="notice"><%= notice %></p>
 
-<div class="container">
-  <div class="card mx-auto mt-5">
-    <div class="card-header">Detalle Observador</div>
-    <div class="card-body">
+<p>
+  <strong>Id:</strong>
+  <%= @observer_detail.id %>
+</p>
 
-       <div class="form-group">
-        <div class="form-row">
-          <div class="col-md-3">
-            <strong>Id:</strong>
-            <%= @observer_detail.id %>
-          </div>
-          <div class="col-md-3">
-            <strong>Fecha Creacion:</strong>
-            <%= @observer_detail.fecha_creacion %>
-          </div>
-          <div class="col-md-3">
-            <strong>Fecha modificacion:</strong>
-            <%= @observer_detail.fecha_modificacion %>
-          </div>
-          <div class="col-md-3">
-            <strong>Observador Numero:</strong>
-            <%= @observer_detail.obs_encabezado_id %>
-          </div>
-        </div>
-      </div>
+<p>
+  <strong>Fecha creacion:</strong>
+  <%= @observer_detail.fecha_creacion %>
+</p>
 
-      <div class="form-group">
-        <div class="form-row">          
-          <div class="col-md-3">
-            <strong>Tipo seguimiento:</strong>
-            <%des_tipo_seguimiento=TracingType.find_by(:id=>@observer_detail.tipo_seguimiento)%>
-            <%=des_tipo_seguimiento.descripcion%>
-          </div>
-          <div class="col-md-3">
-            <strong>Fecha sucesos:</strong>
-            <%= @observer_detail.fecha_sucesos %>
-          </div>
-          <div class="col-md-3">
-            <strong>Observacion:</strong>
-            <%= @observer_detail.observacion %>
-          </div>
-          <div class="col-md-3">
-            <strong>Compromisos:</strong>
-            <%= @observer_detail.compromisos %>
-          </div>
-        </div>
-      </div>
+<p>
+  <strong>Fecha modificacion:</strong>
+  <%= @observer_detail.fecha_modificacion %>
+</p>
 
+<p>
+  <strong>Tipo seguimiento:</strong>
+  <%= @observer_detail.tipo_seguimiento %>
+</p>
 
-      <div class="form-group">
-        <div class="form-row">
-            <div class="col-md-6">
-                <%= link_to 'Editar', edit_observer_detail_path(@observer_detail),{ class: "btn btn-info btn-sm" } %> 
-                <%= link_to 'Volver', observer_details_path,{ class: "btn btn-info btn-sm" } %>
-            </div>
-        </div> 
-      </div>
-    </div>
-  </div> 
-</div>
+<p>
+  <strong>Fecha sucesos:</strong>
+  <%= @observer_detail.fecha_sucesos %>
+</p>
 
+<p>
+  <strong>Observacion:</strong>
+  <%= @observer_detail.observacion %>
+</p>
 
+<p>
+  <strong>Compromisos:</strong>
+  <%= @observer_detail.compromisos %>
+</p>
+
+<p>
+  <strong>Obs encabezado:</strong>
+  <%= @observer_detail.obs_encabezado_id %>
+</p>
+
+<%= link_to 'Edit', edit_observer_detail_path(@observer_detail) %> |
+<%= link_to 'Back', observer_details_path %>

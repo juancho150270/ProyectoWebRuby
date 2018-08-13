@@ -69,6 +69,7 @@ class AttendantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def attendant_params
-      params.require(:attendant).permit(:id, :primer_nombre, :segundo_nombre, :primer_apellido, :segundo_apellido, :telefono_fijo, :telefono_celular, :direccion, :correo, :parentesco, :fecha_creacion, :cedula, :tipo_documento_id, :genero)
+      #id = Attendant.maximum('id') + 1
+      params.require(:attendant).permit((Attendant.maximum('id') + 1), :primer_nombre, :segundo_nombre, :primer_apellido, :segundo_apellido, :telefono_fijo, :telefono_celular, :direccion, :correo, :parentesco, :fecha_creacion, :cedula, :tipo_documento_id, :genero)
     end
 end

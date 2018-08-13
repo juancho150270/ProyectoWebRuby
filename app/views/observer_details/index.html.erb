@@ -1,51 +1,41 @@
 <p id="notice"><%= notice %></p>
 
-<div class="container">
-  <div class="card mx-auto mt-5">
-    <div class="card-header">Detalle de observador</div>
-    <div class="card-body">
+<h1>Observer Details</h1>
 
- <div class="form-group">
-    <div class="form-row">
-      <div class="col-md-6">
-        <%= link_to 'Nuevo', new_observer_detail_path,{ class: "btn btn-warning btn-sm" } %>
-      </div>
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="form-row">
-      <div class="col-md-6">
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Fecha creacion</th>
+      <th>Fecha modificacion</th>
+      <th>Tipo seguimiento</th>
+      <th>Fecha sucesos</th>
+      <th>Observacion</th>
+      <th>Compromisos</th>
+      <th>Obs encabezado</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th>Id</th>
-              <th>Fecha creacion</th>
-              <th>Tipo seguimiento</th>              
-              <th>Obs encabezado</th>
-              <th colspan="3"></th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @observer_details.each do |observer_detail| %>
-              <tr>
-                <td><%= observer_detail.id %></td>
-                <td><%= observer_detail.fecha_creacion %></td>
-                <td><%des_observer_detail=TracingType.find_by(:id=>observer_detail.tipo_seguimiento)%>
-            <%=des_observer_detail.descripcion%></td>
-                <td><%= observer_detail.obs_encabezado_id %></td>
-                <td><%= link_to 'Ver', observer_detail,{ class: "btn btn-info btn-sm" } %></td>
-                <td><%= link_to 'Editar', edit_observer_detail_path(observer_detail),{ class: "btn btn-success btn-sm" } %></td>
-                <td><%= link_to 'Eliminar', observer_detail,:class=>"btn btn-danger btn-sm", method: :delete, data: { confirm: '¿Realmente desea eliminar el registro?' } %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
+  <tbody>
+    <% @observer_details.each do |observer_detail| %>
+      <tr>
+        <td><%= observer_detail.id %></td>
+        <td><%= observer_detail.fecha_creacion %></td>
+        <td><%= observer_detail.fecha_modificacion %></td>
+        <td><%= observer_detail.tipo_seguimiento %></td>
+        <td><%= observer_detail.fecha_sucesos %></td>
+        <td><%= observer_detail.observacion %></td>
+        <td><%= observer_detail.compromisos %></td>
+        <td><%= observer_detail.obs_encabezado_id %></td>
+        <td><%= link_to 'Show', observer_detail %></td>
+        <td><%= link_to 'Edit', edit_observer_detail_path(observer_detail) %></td>
+        <td><%= link_to 'Destroy', observer_detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
-      </div>
-    </div>
-  </div>
+<br>
 
-    </div>
-  </div>
-</div>
+<%= link_to 'New Observer Detail', new_observer_detail_path %>

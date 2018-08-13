@@ -69,6 +69,7 @@ class GradesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def grade_params
-      params.require(:grade).permit(:id, :descripcion, :fecha_creacion)
+      #id = Grade.maximum('id') + 1
+      params.require(:grade).permit((Grade.maximum('id') + 1), :descripcion, :fecha_creacion)
     end
 end
