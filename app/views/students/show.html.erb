@@ -67,7 +67,8 @@
           </div>
           <div class="col-md-3">
             <strong>Acudiente:</strong>
-            <%= @student.acudiente_id %>
+            <%des_Acudiente=Attendant.find_by(:id=>@student.acudiente_id)%>
+            <%=des_Acudiente.cedula%> - <%=des_Acudiente.primer_nombre%> <%=des_Acudiente.primer_apellido%>
           </div>
         </div>
       </div>

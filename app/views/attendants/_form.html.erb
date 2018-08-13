@@ -23,24 +23,22 @@
       
       <div class="col-md-3">        
         <label id="lblparentesco">Parentesco:</label>
-        
-
         <%@Parentesco = KinType.all%>
         <select id="attendant_parentesco" name="attendant[parentesco]" class="form-control">
           <% @Parentesco.each do |item|%>
             <option value="<%= item.id %>" <%= @attendant.parentesco == item.id ? 'selected' : '' %> ><%= item.descripcion %></option>
           <% end %>
         </select>
-
-
-
       </div>
 
       <div class="col-md-3">
         <label id="lbltipo_documento_id">Tipo Documento:</label>
-        <input type="text" id="attendant_tipo_documento_id" name="attendant[tipo_documento_id]" 
-        class="form-control" placeholder="Ingrese tipo documento"
-        value="<%= @attendant != nil ? @attendant.tipo_documento_id : '' %>">
+        <%@TipoDocumento = DocumentType.all%>
+        <select id="attendant_TipoDocumento" name="attendant[tipo_documento_id]" class="form-control">
+          <% @TipoDocumento.each do |item|%>
+            <option value="<%= item.id %>" <%= @attendant.tipo_documento_id == item.id ? 'selected' : '' %> ><%= item.descripcion %></option>
+          <% end %>
+        </select>
       </div>
 
       <div class="col-md-3">
@@ -130,9 +128,12 @@
 
     <div class="col-md-3">
         <label id="lblgenero">Genero:</label>
-        <input type="text" id="attendant_genero" name="attendant[genero]" 
-        class="form-control" placeholder="Genero"
-        value="<%= @attendant != nil ? @attendant.genero : '' %>">        
+        <%@Genero = Gender.all%>
+        <select id="attendant_TipoDocumento" name="attendant[genero]" class="form-control">
+          <% @Genero.each do |item|%>
+            <option value="<%= item.id %>" <%= @attendant.genero == item.id ? 'selected' : '' %> ><%= item.descripcion %></option>
+          <% end %>
+        </select>
       </div>
 
     <div class="col-md-3">

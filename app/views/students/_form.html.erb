@@ -117,9 +117,14 @@
 
       <div class="col-md-3">
         <label id="lblacudiente_id">Acudiente:</label>
-        <input type="text" id="student_acudiente_id" name="student[acudiente_id]" 
-        class="form-control" placeholder="Acudiente"
-        value="<%= @student != nil ? @student.acudiente_id : '' %>">
+
+        <%@des_Acudiente = Attendant.all%>
+        <select id="student_acudiente_id" name="student[acudiente_id]" class="form-control">
+          <% @des_Acudiente.each do |item|%>
+            <option value="<%= item.id %>" <%= @student.acudiente_id == item.id ? 'selected' : '' %> ><%= item.cedula %> - <%= item.primer_nombre %> <%= item.primer_apellido %></option>
+          <% end %>
+        </select>
+
       </div>
 
     </div>

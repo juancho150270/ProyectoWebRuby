@@ -35,7 +35,8 @@
                 <td><%= attendant.primer_nombre %></td>
                 <td><%= attendant.primer_apellido %></td>
                 <td><%= attendant.telefono_celular %></td>
-                <td><%= attendant.parentesco %></td>
+                <td><%des_Parentesco=KinType.find_by(:id=>attendant.parentesco)%>
+                  <%=des_Parentesco.descripcion%></td>
                 <td><%= attendant.cedula %></td>
                 <td><%= link_to 'Ver', attendant,{ class: "btn btn-info btn-sm" } %></td>
                 <td><%= link_to 'Editar', edit_attendant_path(attendant),{ class: "btn btn-success btn-sm" } %></td>

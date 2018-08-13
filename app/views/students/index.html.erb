@@ -25,7 +25,6 @@
               <th>Grado</th>
               <th>Jornada</th>
               <th>Acudiente</th>
-              <th>Numero identificacion</th>
               <th colspan="3"></th>
             </tr>
           </thead>
@@ -35,10 +34,12 @@
                 <td><%= student.id %></td>
                 <td><%= student.primer_nombre %></td>
                 <td><%= student.primer_apellido %></td>
-                <td><%= student.grado_id %></td>
-                <td><%= student.jornada_id %></td>
-                <td><%= student.acudiente_id %></td>
-                <td><%= student.numero_identificacion %></td>
+                <td><%des_Grado= Grade.find_by(:id=>student.grado_id)%>
+                  <%=des_Grado.descripcion%>
+                <td><%des_Jornada= WorkingDay.find_by(:id=>student.jornada_id)%>
+                  <%=des_Jornada.descripcion%>
+                <td><%des_Parentesco= Attendant.find_by(:id=>student.acudiente_id)%>
+                  <%=des_Parentesco.cedula%> - <%=des_Parentesco.primer_nombre%> <%=des_Parentesco.primer_apellido%></td>
                 <td><%= link_to 'Ver', student,{ class: "btn btn-info btn-sm" } %></td>
                 <td><%= link_to 'Editar', edit_student_path(student),{ class: "btn btn-success btn-sm" } %></td>
                 <td><%= link_to 'Eliminar', student,:class=>"btn btn-danger btn-sm", method: :delete, data: { confirm: '¿Realmente desea eliminar el registro?' } %></td>
