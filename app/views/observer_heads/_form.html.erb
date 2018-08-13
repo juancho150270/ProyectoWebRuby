@@ -26,7 +26,7 @@
         <%@des_Estudiante = Student.all%>
         <select id="observer_head_estudiante_id" name="observer_head[estudiante_id]" class="form-control">
           <% @des_Estudiante.each do |item|%>
-            <option value="<%= item.id %>" <%= @observer_head.estudiante_id == item.id ? 'selected' : '' %> ><%= item.id %></option>
+            <option value="<%= item.id %>" <%= @observer_head.estudiante_id == item.id ? 'selected' : '' %> ><%= item.numero_identificacion %> - <%= item.primer_nombre %> <%= item.primer_apellido %></option>
           <% end %>
         </select>
       </div>

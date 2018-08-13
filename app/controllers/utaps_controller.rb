@@ -15,11 +15,11 @@ class UtapsController < ApplicationController
             @mensaje = 'Se envio la contraseña a su cuenta de correo'
             @tipo = 'success'
             NotifyMailer.send_mail_clave_recuperada(params[:txtCorreo],'Recuperacion de contraseña',@clave_recuperada).deliver
-            render "login2", layout:"home_principal"
+            render "index", layout:"home_principal"
         else
             @mensaje = 'La direccion de correo no existe'
             @tipo = 'warning'
-            render "login2", layout:"home_principal"
+            render "index", layout:"home_principal"
         end
     end
     def ingresar

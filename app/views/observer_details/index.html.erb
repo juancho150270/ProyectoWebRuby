@@ -27,7 +27,9 @@
             </tr>
           </thead>
           <tbody>
+          <% if session[:obs_id] == observer_detail.obs_encabezado_id %>
             <% @observer_details.each do |observer_detail| %>
+              
               <tr>
                 <td><%= observer_detail.id %></td>
                 <td><%= observer_detail.fecha_creacion %></td>
@@ -38,6 +40,7 @@
                 <td><%= link_to 'Editar', edit_observer_detail_path(observer_detail),{ class: "btn btn-success btn-sm" } %></td>
                 <td><%= link_to 'Eliminar', observer_detail,:class=>"btn btn-danger btn-sm", method: :delete, data: { confirm: '¿Realmente desea eliminar el registro?' } %></td>
               </tr>
+            <% end %>
             <% end %>
           </tbody>
         </table>

@@ -37,12 +37,18 @@
 
       <div class="col-md-3">
         <label id="lblobs_encabezado_id">Numero Observador:</label>
+
+        <input type="number" id="observer_detail_obs_encabezado_id" name="observer_detail[obs_encabezado_id]" 
+        class="form-control" readonly="readonly"
+        value="<%= session[:obs_id] %>" >
+
+        
         <%@des_obs_encabezado_id = ObserverHead.all%>
-        <select id="observer_detail_obs_encabezado_id" name="observer_detail[obs_encabezado_id]" class="form-control">
+        <!--<select id="observer_detail_obs_encabezado_id" name="observer_detail[obs_encabezado_id]" class="form-control">-->
           <% @des_obs_encabezado_id.each do |item|%>
-            <option value="<%= item.id %>" <%= @observer_detail.obs_encabezado_id == item.id ? 'selected' : '' %> ><%= item.id %></option>
+            <!--<option value="<%= item.id %>" <%= @observer_detail.obs_encabezado_id == item.id ? 'selected' : '' %> ><%= item.id %></option>-->
           <% end %>
-        </select>
+        <!--</select>-->
       </div>
 
     </div>

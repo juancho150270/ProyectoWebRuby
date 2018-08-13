@@ -10,11 +10,12 @@
           <div class="col-md-4">
             <strong>Id:</strong>
             <%= @observer_head.id %>
+            <%session[:obs_id] = @observer_head.id %>
           </div>
           <div class="col-md-4">
             <strong>Estudiante:</strong>
             <%des_Estudiante=Student.find_by(:id=>@observer_head.estudiante_id)%>
-            <%=des_Estudiante.id%>
+            <%=des_Estudiante.numero_identificacion%> - <%=des_Estudiante.primer_nombre%> <%=des_Estudiante.primer_apellido%>
           </div>
           <div class="col-md-4">
             <strong>Usuario:</strong>
@@ -45,7 +46,9 @@
 
       <div class="form-group">
         <div class="form-row">
-            <div class="col-md-6">
+            <div class="col-md-9">
+                <%= link_to 'Nuevo detalle', new_observer_detail_path,{ class: "btn btn-warning btn-sm" } %>
+                <%= link_to 'Ver detalles', observer_details_path,{ class: "btn btn-info btn-sm" } %>
                 <%= link_to 'Editar', edit_observer_head_path(@observer_head),{ class: "btn btn-info btn-sm" } %> 
                 <%= link_to 'Volver', observer_heads_path,{ class: "btn btn-info btn-sm" } %>
             </div>

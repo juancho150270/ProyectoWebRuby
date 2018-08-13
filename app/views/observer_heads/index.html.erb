@@ -34,7 +34,8 @@
         <tr>
           <td><%= observer_head.id %></td>
           <td><%= observer_head.fecha_creacion %></td>
-          <td><%= observer_head.estudiante_id %></td>
+          <td><%des_Estudiante=Student.find_by(:id=>observer_head.estudiante_id)%>
+            <%=des_Estudiante.numero_identificacion%> - <%=des_Estudiante.primer_nombre%> <%=des_Estudiante.primer_apellido%></td>
           <td><%des_Usuario=User.find_by(:id=>observer_head.usuario_id)%>
             <%=des_Usuario.login%></td>
           <td><%= observer_head.titulo %></td>
