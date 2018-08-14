@@ -7,15 +7,15 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <!-- Bootstrap core CSS-->
-  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom fonts for this template-->
-  <link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-  <!-- Page level plugin CSS-->
-  <link href="/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
-  <!-- Custom styles for this template-->
-  <link href="/css/sb-admin.css" rel="stylesheet">
-  <link href="/css/sweetalert.css" rel="stylesheet">
-  <!-- Bootstrap core JavaScript-->
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom fonts for this template-->
+    <link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- Page level plugin CSS-->
+    <link href="/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="/css/sb-admin.css" rel="stylesheet">
+    <link href="/css/sweetalert.css" rel="stylesheet">
+    <!-- Bootstrap core JavaScript-->
     <script src="/vendor/jquery/jquery.min.js"></script>
     <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Core plugin JavaScript-->
@@ -31,159 +31,148 @@
     <script src="/js/sb-admin-charts.min.js"></script>
     <script src="/js/sweetalert.min.js"></script>
   </head>
-
-  <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="/users/home">Observador Web 1.0</a>
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Resumen">
-          <a class="nav-link" href="/observer_heads/index">
-            <i class="fa fa-fw fa-dashboard"></i>
-            <span class="nav-link-text">Resumen</span>
-          </a>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Observador">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-file"></i>
-            <span class="nav-link-text">Observador</span>
-          </a>
-          <ul class="sidenav-second-level collapse" id="collapseExamplePages">
-            <li>
-              <%= link_to 'Observador', {:controller=>:observer_heads,:action=>:index} %>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Administrador">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
-            <i class="fa fa-align-left"></i>
-            <span class="nav-link-text">Menu Administrador</span>
-          </a>
-
-          <ul class="sidenav-second-level collapse" id="collapseMulti">           
-                <li>
-                  <%= link_to 'Usuario', {:controller=>:users,:action=>:index} %>
-                </li>
-                <li>
-                  <%= link_to 'Estudiante', {:controller=>:students,:action=>:index} %>
-                </li>
-                <li>
-                <%= link_to 'Acudiente', {:controller=>:attendants,:action=>:index} %>
-                </li>
-                <li>
-                  <%= link_to 'Rol', {:controller=>:profiles,:action=>:index} %>
-                </li>
-                <li>
-                <%= link_to 'Grados', {:controller=>:grades,:action=>:index} %>
-                </li>
-                <li>
-                <%= link_to 'Jornada', {:controller=>:working_days,:action=>:index} %>
-                </li>
-                <li>
-                <%= link_to 'Estado de observador', {:controller=>:observer_states,:action=>:index} %>
-                </li>
-                <li>
-                <%= link_to 'Tipo de seguimiento', {:controller=>:tracing_types,:action=>:index} %>
-                </li>
-                <li>
-                  <%= link_to 'Tipo acudiente', {:controller=>:kin_types,:action=>:index} %>
-                </li>
-                <li>
-                  <%= link_to 'Tipo de documento', {:controller=>:document_types,:action=>:index} %>
-                </li><li>
-                <%= link_to 'Genero', {:controller=>:genders,:action=>:index} %>
-                </li>
+  <body class="fixed-nav sticky-footer bg-dark" id="page-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+      <a class="navbar-brand" href="/observador">Observador Web 1.0</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Observador">
+            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseObservador" data-parent="#exampleAccordion">
+              <i class="fa fa-fw fa-wrench"></i>
+              <span class="nav-link-text">Observador</span>
+            </a>
+            <ul class="sidenav-second-level collapse" id="collapseObservador">
+              <li>
+                <%= link_to 'Observador', {:controller=>:observer_heads,:action=>:index} %>
+              </li>
             </ul>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Acerca del sistema">
-          <a class="nav-link" href="#">
-            <i class="fa fa-fw fa-link"></i>
-            <span class="nav-link-text">Acerca del sistema</span>
-          </a>
-        </li>
-      </ul>
-      <ul class="navbar-nav sidenav-toggler">
+          </li>
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Administrador">
+            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
+              <i class="fa fa-align-left"></i>
+              <span class="nav-link-text">Menu Administrador</span>
+            </a>
+            <ul class="sidenav-second-level collapse" id="collapseMulti">           
+                  <li>
+                    <%= link_to 'Usuario', {:controller=>:users,:action=>:index} %>
+                  </li>
+                  <li>
+                    <%= link_to 'Estudiante', {:controller=>:students,:action=>:index} %>
+                  </li>
+                  <li>
+                    <%= link_to 'Acudiente', {:controller=>:attendants,:action=>:index} %>
+                  </li>
+                  <li>
+                    <%= link_to 'Rol', {:controller=>:profiles,:action=>:index} %>
+                  </li>
+                  <li>
+                    <%= link_to 'Grados', {:controller=>:grades,:action=>:index} %>
+                  </li>
+                  <li>
+                    <%= link_to 'Jornada', {:controller=>:working_days,:action=>:index} %>
+                  </li>
+                  <li>
+                    <%= link_to 'Estado de observador', {:controller=>:observer_states,:action=>:index} %>
+                  </li>
+                  <li>
+                    <%= link_to 'Tipo de seguimiento', {:controller=>:tracing_types,:action=>:index} %>
+                  </li>
+                  <li>
+                    <%= link_to 'Tipo acudiente', {:controller=>:kin_types,:action=>:index} %>
+                  </li>
+                  <li>
+                    <%= link_to 'Tipo de documento', {:controller=>:document_types,:action=>:index} %>
+                  </li><li>
+                    <%= link_to 'Genero', {:controller=>:genders,:action=>:index} %>
+                  </li>
+            </ul>
+          </li>
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Acerca del sistema">
+            <a class="nav-link" href="acerca_de">
+              <i class="fa fa-fw fa-link"></i>
+              <span <%= link_to 'Acerca del sistema', {:controller=>:utaps,:action=>:acerca_de},{ class: "nav-link-text" } %></span>
+            </a>
+          </li>
+        </ul>
+        <ul class="navbar-nav sidenav-toggler">
         <li class="nav-item">
           <a class="nav-link text-center" id="sidenavToggler">
             <i class="fa fa-fw fa-angle-left"></i>
           </a>
         </li>
       </ul>
-      <ul class="navbar-nav ml-auto">        
-        <li class="nav-item">
-          
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-            <i class="fa fa-fw fa-sign-out"></i>Salir</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <div class="content-wrapper">
-    <div class="container-fluid">
-        <%= yield %>
-    </div>
-    <!-- /.content-wrapper-->
-    <footer class="sticky-footer">
-      <div class="container">
-        <div class="text-center">
-          <small>Copyright © Observador Web 1.0 2018</small>
-        </div>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+              <i class="fa fa-fw fa-sign-out"></i>Salir
+            </a>
+          </li>
+        </ul>
       </div>
-    </footer>
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-      <i class="fa fa-angle-up"></i>
-    </a>
-    <!-- Logout Modal-->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">¿Desea salir de la aplicación?</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body">Seleccione "Cerrar sesión" a continuación si está listo para finalizar su sesión actual.</div>
-          <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-            <a class="btn btn-primary" href="/cerrarsesion">Cerrar sesión</a>
-            
+    </nav>
+    <div class="content-wrapper">
+      <div class="container-fluid">
+          <%= yield %>
+      </div>
+      <!-- /.content-wrapper-->
+      
+      <footer class="sticky-footer">
+        <div class="container">
+          <div class="text-center">
+            <small>Copyright © Observador Web 1.0 2018</small>
           </div>
         </div>
+      </footer>
+      <!-- Scroll to Top Button-->
+      <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fa fa-angle-up"></i>
+      </a>
+      <!-- Logout Modal-->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">¿Desea salir de la aplicación?</h5>
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body">Seleccione "Cerrar sesión" a continuación si está listo para finalizar su sesión actual.</div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+              <a class="btn btn-primary" href="/cerrarsesion">Cerrar sesión</a>            
+            </div>
+          </div>
+        </div>
       </div>
+      <!-- Bootstrap core JavaScript-->
+      <script src="vendor/jquery/jquery.min.js"></script>
+      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <!-- Core plugin JavaScript-->
+      <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+      <!-- Custom scripts for all pages-->
+      <script src="js/sb-admin.min.js"></script>
+      <!-- Custom scripts for this page-->
+      <!-- Toggle between fixed and static navbar-->
+      <script>
+        $('#toggleNavPosition').click(function() {
+          $('body').toggleClass('fixed-nav');
+        $('nav').toggleClass('fixed-top static-top');
+      });
+
+      </script>
+      <!-- Toggle between dark and light navbar-->
+      <script>
+      $('#toggleNavColor').click(function() {
+        $('nav').toggleClass('navbar-dark navbar-light');
+        $('nav').toggleClass('bg-dark bg-light');
+        $('body').toggleClass('bg-dark bg-light');
+      });
+
+      </script>
     </div>
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin.min.js"></script>
-    <!-- Custom scripts for this page-->
-    <!-- Toggle between fixed and static navbar-->
-    <script>
-    $('#toggleNavPosition').click(function() {
-      $('body').toggleClass('fixed-nav');
-      $('nav').toggleClass('fixed-top static-top');
-    });
-
-    </script>
-    <!-- Toggle between dark and light navbar-->
-    <script>
-    $('#toggleNavColor').click(function() {
-      $('nav').toggleClass('navbar-dark navbar-light');
-      $('nav').toggleClass('bg-dark bg-light');
-      $('body').toggleClass('bg-dark bg-light');
-    });
-
-    </script>
-  </div>
-    
   </body>
 </html>

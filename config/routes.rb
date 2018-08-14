@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :genders
   resources :attendants
   resources :students
+  get "acerca_de" => "utaps#acerca_de"
   get "observador" => "utaps#index"
   post "utaps/login"
   get "utaps/login"

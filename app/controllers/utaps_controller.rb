@@ -2,6 +2,9 @@ class UtapsController < ApplicationController
     def index
         render "index", layout:"home_principal"
     end
+    def acerca_de
+        render "acerca_de", layout:"home"
+    end
     def login
         render "login2", layout:"home_principal"
     end
