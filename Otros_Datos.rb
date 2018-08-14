@@ -11,3 +11,4 @@ rails g scaffold WorkingDay id:integer descripcion:string fecha_creacion:date
 rails g scaffold ObserverState id:integer descripcion:string fecha_creacion:date
 rails g scaffold DocumentType id:integer descripcion:string fecha_creacion:date
 rails g scaffold KinType id:integer descripcion:string fecha_creacion:date
+
