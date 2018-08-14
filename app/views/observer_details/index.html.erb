@@ -8,7 +8,8 @@
  <div class="form-group">
     <div class="form-row">
       <div class="col-md-6">
-        <%= link_to 'Nuevo', new_observer_detail_path,{ class: "btn btn-warning btn-sm" } %>
+      <% session[:pagina_enc]="observer_heads/".concat(session[:obs_id].to_s)%>
+        <%= link_to 'Volver', session[:pagina_enc],{ class: "btn btn-info btn-sm" } %>
       </div>
     </div>
   </div>
@@ -27,8 +28,9 @@
             </tr>
           </thead>
           <tbody>
-          <% if session[:obs_id] == observer_detail.obs_encabezado_id %>
+          
             <% @observer_details.each do |observer_detail| %>
+            <% if session[:obs_id] == observer_detail.obs_encabezado_id %>
               
               <tr>
                 <td><%= observer_detail.id %></td>
@@ -37,8 +39,10 @@
             <%=des_observer_detail.descripcion%></td>
                 <td><%= observer_detail.obs_encabezado_id %></td>
                 <td><%= link_to 'Ver', observer_detail,{ class: "btn btn-info btn-sm" } %></td>
+                <% if session[:obs_estado]==1 %>
                 <td><%= link_to 'Editar', edit_observer_detail_path(observer_detail),{ class: "btn btn-success btn-sm" } %></td>
                 <td><%= link_to 'Eliminar', observer_detail,:class=>"btn btn-danger btn-sm", method: :delete, data: { confirm: '¿Realmente desea eliminar el registro?' } %></td>
+                <%end%>
               </tr>
             <% end %>
             <% end %>

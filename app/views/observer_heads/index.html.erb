@@ -42,8 +42,10 @@
           <td><%des_Estado=ObserverState.find_by(:id=>observer_head.estado)%>
             <%=des_Estado.descripcion%></td>
           <td><%= link_to 'Ver', observer_head,{ class: "btn btn-info btn-sm" } %></td>
+          <% if observer_head.estado==1 %>
           <td><%= link_to 'Editar', edit_observer_head_path(observer_head),{ class: "btn btn-success btn-sm" } %></td>
           <td><%= link_to 'Eliminar', observer_head,:class=>"btn btn-danger btn-sm", method: :delete, data: { confirm: '¿Realmente desea eliminar el registro?' } %></td>
+          <%end%>
         </tr>
       <% end %>
     </tbody>
