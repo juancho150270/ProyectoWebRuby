@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<% if session[:loginUp] then%>
 <html>
   <head>
     <title>Observador</title>
@@ -107,6 +108,7 @@
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
             <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+              <%= session[:loginUp][2] %>
               <i class="fa fa-fw fa-sign-out"></i>Salir
             </a>
           </li>
@@ -143,7 +145,7 @@
             <div class="modal-body">Seleccione "Cerrar sesión" a continuación si está listo para finalizar su sesión actual.</div>
             <div class="modal-footer">
               <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-              <a class="btn btn-primary" href="/cerrarsesion">Cerrar sesión</a>            
+              <%= link_to 'Cerrar sesión', {:controller=>:utaps,:action=>:cerrar_session},class:"btn btn-primary" %>
             </div>
           </div>
         </div>
@@ -176,3 +178,6 @@
     </div>
   </body>
 </html>
+<%else%>
+  <html><head><META HTTP-EQUIV="REFRESH" CONTENT="0;URL=/observador"></head><body></body></html>
+<%end%>

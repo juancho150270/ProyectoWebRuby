@@ -31,6 +31,7 @@ class UtapsController < ApplicationController
             @tipo = 'success'
             @login_usuario=params[:txtUser]
             perfiluser=User.find_by(:login=>params[:txtUser])
+            session[:loginUp] = [perfiluser.id,params[:txtUser],perfiluser.primer_nombre+' '+perfiluser.segundo_nombre+' '+perfiluser.primer_apellido]
             @perfil_usuario=perfiluser.perfil_id
             if @perfil_usuario==2
                 render "home", layout:"home"
@@ -43,6 +44,12 @@ class UtapsController < ApplicationController
             @tipo = 'warning'            
             render "index", layout:"home_principal"
         end
+    end
+
+    def cerrar_session
+        session.delete(:loginUp)
+        @current_user = nil
+        render "index", layout:"home_principal"
     end
 
     #Ejercicio Final

@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   get "utaps/login"
   get "utap" => "utaps#login"
   post "utaps/ingresar"
-  get "/cerrarsesion" => "utaps#index"
+  get "utaps/cerrar_session"
   get "/utaps/olvido_clave"
   post "utaps/recuperar_clave"
   get "product" => "utaps#product"
