@@ -39,7 +39,7 @@ a { text-decoration:none }
 }
 
 #loginButton:hover span {
-    color:#3756e0;
+    color: rgba(0,123,255,.25);
     border:0px
 }
 

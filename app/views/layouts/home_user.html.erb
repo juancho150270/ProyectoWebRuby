@@ -63,9 +63,9 @@
         </li>
         
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Acerca del sistema">
-          <a class="nav-link" href="#">
-            <i class="fa fa-fw fa-link"></i>
-            <span class="nav-link-text">Acerca del sistema</span>
+          <a class="nav-link" href="../acerca_de">
+              <i class="fa fa-fw fa-link"></i>
+              <span <%= link_to 'Acerca del sistema', {:controller=>:utaps,:action=>:acerca_de},{ class: "nav-link-text" } %></span>
           </a>
         </li>
       </ul>
