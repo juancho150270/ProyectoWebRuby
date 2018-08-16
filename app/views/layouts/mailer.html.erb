@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<% if session[:loginUp] then%>
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -12,6 +11,3 @@
     <%= yield %>
   </body>
 </html>
-<%else%>
-  <html><head><META HTTP-EQUIV="REFRESH" CONTENT="0;URL=/observador"></head><body></body></html>
-<%end%>

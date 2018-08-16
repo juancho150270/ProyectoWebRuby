@@ -45,8 +45,25 @@
                           <input type="submit" class="btn btn-primary btn-block" value="Aceptar"/>        
                           <% end %> 
                         </fieldset>
-                        <%= link_to 'Olvido su clave?', {:controller=>:utaps,:action=>:olvido_clave}, class:"btn btn-primary btn-block" %>
+                        <a href="#" id="recoveryButton" class="btn btn-primary btn-block"><span>Olvido su clave?</span></a>
                     </div>
+                </div>
+                                      <!-- Recovery Login Starts Here -->
+                <div id="loginContainer">
+                  <div id="recoveryBox">                
+                      <div id="rloginForm">
+                          <fieldset id="body">
+                            <%= form_tag(:controller => "utaps", :action => "recuperar_clave", :method => "post") do |f| %>
+                            <div class="form-group">
+                              <label for="lblUser" class="text-dark">Correo</label>
+                              <input class="form-control" id="txtCorreo" name="txtCorreo" type="email" placeholder="Ingrese su Correo" required="required">
+                            </div>
+                            <input type="submit" class="btn btn-primary btn-block" value="Recuperar"/>      
+                            <% end %> 
+                          </fieldset>
+                          <%= link_to 'Cancelar', {:controller=>:utaps,:action=>:index}, class:"btn btn-primary btn-block" %>
+                      </div>
+                  </div>
                 </div>
             </div>
             <!-- Login Ends Here -->
