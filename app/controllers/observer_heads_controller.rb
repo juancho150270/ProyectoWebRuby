@@ -1,5 +1,6 @@
 class ObserverHeadsController < ApplicationController
   before_action :set_observer_head, only: [:show, :edit, :update, :destroy]
+  
   layout 'home'
 
   # GET /observer_heads

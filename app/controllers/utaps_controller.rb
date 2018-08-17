@@ -31,14 +31,8 @@ class UtapsController < ApplicationController
             @tipo = 'success'
             @login_usuario=params[:txtUser]
             perfiluser=User.find_by(:login=>params[:txtUser])
-            session[:loginUp] = [perfiluser.id,params[:txtUser],perfiluser.primer_nombre+' '+perfiluser.segundo_nombre+' '+perfiluser.primer_apellido]
-            @perfil_usuario=perfiluser.perfil_id
-            if @perfil_usuario==2
-                render "home", layout:"home"
-            else
-                render "home", layout:"home_user"
-                
-            end
+            session[:loginUp] = [perfiluser.id,params[:txtUser],perfiluser.primer_nombre+' '+perfiluser.segundo_nombre+' '+perfiluser.primer_apellido,perfiluser.perfil_id]
+            render "home", layout:"home"
         else
             @mensaje = 'Usuario o clave incorrecto'
             @tipo = 'warning'            

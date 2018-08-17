@@ -49,8 +49,12 @@
               <li>
                 <%= link_to 'Observador', {:controller=>:observer_heads,:action=>:index} %>
               </li>
+              <li>
+                <%= link_to 'Buscar', {:controller=>:observer_heads,:action=>:index} %>
+              </li>
             </ul>
           </li>
+          <% if session[:loginUp][3]==2 then%>
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Administrador">
             <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
               <i class="fa fa-align-left"></i>
@@ -91,6 +95,7 @@
                   </li>
             </ul>
           </li>
+          <%end%>
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Acerca del sistema">
             <a class="nav-link" href="../acerca_de">
               <i class="fa fa-fw fa-link"></i>
@@ -106,6 +111,18 @@
         </li>
       </ul>
         <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+          <form class="form-inline my-2 my-lg-0 mr-lg-2">
+            <div class="input-group">
+              <input class="form-control" type="text" placeholder="Buscar">
+              <span class="input-group-append">
+                <button class="btn btn-primary" type="button">
+                  <i class="fa fa-search"></i>
+                </button>
+              </span>
+            </div>
+          </form>
+        </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
               <%= session[:loginUp][2] %>
